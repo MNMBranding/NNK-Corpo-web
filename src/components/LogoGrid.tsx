@@ -38,7 +38,7 @@ export default function LogoGrid() {
 
       <div className="w-full flex flex-col items-center text-center">
         <div className="text-[16px] mb-16 font-medium tracking-wide">
-          Trusted by businesses around the world
+          OUR PROJECTS
         </div>
 
         <div className="w-full flex flex-col gap-16 overflow-hidden">

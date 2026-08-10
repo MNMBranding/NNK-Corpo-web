@@ -45,7 +45,7 @@ export default function LatestNews() {
           </div>
           <div className="md:col-start-5 md:col-end-12">
             <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight">
-              Recent developments in modern architecture.
+              Stories That Inspire Every Project 
             </h2>
           </div>
         </div>

@@ -45,10 +45,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
           <div>
             <h2 className="text-[12vw] md:text-[6vw] leading-[1] font-medium tracking-tight">
-              Let's
+              Connect
             </h2>
             <h2 className="text-[12vw] md:text-[6vw] leading-[1] font-medium tracking-tight text-[#a1a1aa]">
-              Work together
+              With Us
             </h2>
           </div>
           <Link 
@@ -68,7 +68,7 @@ export default function Footer() {
               LUNA ARC®
             </Link>
             <p className="text-[#a1a1aa] text-sm max-w-[200px]">
-              Crafting timeless structures that inspire.
+              Experience Bliss Everyday
             </p>
           </div>
           
@@ -76,9 +76,8 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Sitemap</h3>
             <FooterLink href="/" text="Home" />
-            <FooterLink href="/about" text="Studio" />
-            <FooterLink href="/news" text="News" />
-            <FooterLink href="/packages" text="Packages" />
+            <FooterLink href="/about" text="Projects" />
+            <FooterLink href="/news" text="Blogs" />
             <FooterLink href="/contact" text="Contact" />
           </div>
           

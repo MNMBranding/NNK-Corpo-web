@@ -7,14 +7,6 @@ export default function AboutHero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-[50px]">
           
           <div className="md:col-span-1">
-      <div className="flex gap-2 items-center text-[13px] uppercase tracking-wide font-medium opacity-80 mb-6 md:mb-10">
-        <Link href="/" className="hover:text-white transition-colors flex items-center gap-2 group">
-          <img src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="arrow" className="w-[14px] h-[14px] group-hover:translate-x-1 transition-transform" />
-          HOME
-        </Link>
-        <span className="opacity-50">/</span>
-        <span>STUDIO</span>
-      </div>
           </div>
           <div className="md:col-span-2">
             <h2 className="text-[12vw] md:text-[6vw] leading-[1.1] font-medium tracking-tight mb-10 md:mb-20">

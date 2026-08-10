@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 const services = [
   {
-    title: 'Conceptual Design',
-    description: 'Transforming initial ideas into visual concepts and blueprints.',
+    title: 'NNK AIRA | 3 BHK + HOME THEATRE',
+    description: 'A hill-top living, grounded in peace',
     image: '/assets/675c20c228d1b98f7d5d34ef_photo-1.jpeg',
     link: '/service/conceptual-design',
   },
   {
-    title: 'Architectural Planning',
-    description: 'Creating detailed plans, 3D models, and documentation for permit approval.',
+    title: 'NNK ARAVALI | 2 BHK',
+    description: 'Shaikpet’s Landmark Address for Elevated Living',
     image: '/assets/6760092ea6b15b1155e2e144_photo-2.avif',
     link: '/service/architectural-planning',
   },
   {
-    title: 'Interior Design',
-    description: 'Optimizing layouts and selecting materials to create functional.',
+    title: 'NNK VYOMA | 3 BHK',
+    description: 'A Community Crafted for Connoisseurs',
     image: '/assets/676015800f8658c7096cb490_photo-3.avif',
     link: '/service/interior-design',
   },
   {
-    title: 'Project Management',
-    description: 'Overseeing the construction process from start to finish, ensuring every detail.',
+    title: 'NNK VRINDAVAN | 2 & 3 BHK',
+    description: 'Discover a Life of Harmony and Elegance',
     image: '/assets/6760169610470581a9fd8433_photo-4.avif',
     link: '/service/project-management',
   }
@@ -36,12 +36,12 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-32">
           <div className="md:col-start-1 md:col-end-3 pt-2">
             <span className="uppercase text-sm tracking-wide opacity-80">
-              Our Services
+              PROJECTS AT A GLANCE
             </span>
           </div>
           <div className="md:col-start-5 md:col-end-12">
             <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight">
-              We guide you every step of the way, <span className="text-[#a1a1aa]">from blueprint to build</span>.
+              A curated portfolio of  iconic residences, defined by<span className="text-[#a1a1aa]"> timeless elegance, architectural excellence, and refined living</span>.
             </h2>
           </div>
         </div>

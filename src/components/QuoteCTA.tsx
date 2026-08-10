@@ -17,19 +17,15 @@ export default function QuoteCTA() {
       <div className="relative z-10 max-w-[1240px] mx-auto w-full text-center flex flex-col items-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight text-white mb-8">
-            We excel at bringing <span className="text-[#a1a1aa]">visionary designs</span> from concept to completion.
+            Where vision meets <span className="text-[#a1a1aa]">craftsmanship,</span> every project is thoughtfully created to <span className="text-[#a1a1aa]">inspire, endure, and leave a lasting impression</span>.
           </h2>
-          
-          <p className="text-xl md:text-3xl font-semibold opacity-100 text-white mb-12">
-            Experience innovative architectural solutions built around your vision.
-          </p>
           
           <div className="flex justify-center">
             <Link 
-              href="/contact"
+              href="/about"
               className="group relative overflow-hidden inline-flex items-center justify-center bg-white text-main rounded-[100px] py-[18px] px-[30px] uppercase font-medium text-[15px] hover:text-white transition-colors duration-300"
             >
-              <span className="relative z-10">Ask for a quote</span>
+              <span className="relative z-10">Explore Our Projects</span>
               <div className="absolute inset-0 bg-[#111111] rounded-full translate-y-[103%] group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
             </Link>
           </div>

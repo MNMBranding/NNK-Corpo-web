@@ -81,30 +81,18 @@ export default function Hero() {
           {/* Marquee Content */}
           <div className="flex gap-[50px] items-center pr-[50px]">
             <div className="flex items-center gap-10">
-              <span>Tomorrow’s Way of Life</span>
-              <PlayButton />
+              <span>REDEFINING LIFESTYLE | </span>
             </div>
             <div className="flex items-center gap-10">
-              <span>Future of Living</span>
-              <PlayButton />
-            </div>
-            <div className="flex items-center gap-10">
-              <span>New Era in Lifestyle</span>
-              <PlayButton />
+              <span>DISCOVER THE EXCEPTIONAL</span>
             </div>
           </div>
           <div className="flex gap-[50px] items-center pr-[50px]" aria-hidden="true">
             <div className="flex items-center gap-10">
-              <span>Tomorrow’s Way of Life</span>
-              <PlayButton />
+              <span>REDEFINING LIFESTYLE | </span>
             </div>
             <div className="flex items-center gap-10">
-              <span>Future of Living</span>
-              <PlayButton />
-            </div>
-            <div className="flex items-center gap-10">
-              <span>New Era in Lifestyle</span>
-              <PlayButton />
+              <span>DISCOVER THE EXCEPTIONAL</span>
             </div>
           </div>
         </div>

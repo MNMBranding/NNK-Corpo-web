@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="grid grid-cols-2 md:grid-cols-[1fr_0.7fr_1fr_1fr_auto] gap-10 px-5 md:px-[3%] pt-[30px] pb-[30px] items-center md:items-start">
         {/* Column 1: Logo */}
         <Link href="/" className="uppercase text-white font-medium text-[15px] z-50 relative">
-          Luna Arc ®
+          <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="w-4 h-4 brightness-0 invert"/>
         </Link>
 
         {/* Mobile Hamburger Button */}
@@ -31,29 +31,20 @@ export default function Navbar() {
         {/* Column 2: Subhead (Hidden on mobile) */}
         <div className="hidden md:block">
           <p className="uppercase text-white text-[13px] font-medium opacity-80 leading-tight">
-            Crafting timeless<br />structures that<br />inspire
+            A Blissful Experience<br />Enriching Everyday<br />
           </p>
         </div>
 
         {/* Column 3: Nav Menu (Desktop) */}
         <div className="hidden md:flex flex-col gap-[2px]">
           <NavLink href="/" text="Home" />
-          <NavLink href="/about" text="Studio" />
-          <NavLink href="/news" text="News" />
+          <NavLink href="/about" text="Projects" />
         </div>
 
         {/* Column 4: Right Menu (Desktop) */}
         <div className="hidden md:flex flex-col gap-[2px]">
-          <NavLink href="/contact" text="Contact" />
-          <NavLink href="/cart" text="Cart" count={0} />
-        </div>
-
-        {/* Column 5: Socials (Desktop) */}
-        <div className="hidden md:flex gap-3">
-          <SocialLink href="https://instagram.com" text="IG" />
-          <SocialLink href="https://dribbble.com" text="DB" />
-          <SocialLink href="https://x.com" text="X" />
-          <SocialLink href="https://behance.net" text="BE" />
+          <NavLink href="/news" text="Blogs" />
+          <NavLink href="/contact" text="Contact"/>
         </div>
       </div>
 
