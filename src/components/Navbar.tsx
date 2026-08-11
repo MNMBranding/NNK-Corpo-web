@@ -11,8 +11,8 @@ export default function Navbar() {
     <nav className="w-full z-50 relative bg-main">
       <div className="grid grid-cols-2 md:grid-cols-[1fr_0.7fr_1fr_1fr_auto] gap-10 px-5 md:px-[3%] pt-[30px] pb-[30px] items-center md:items-start">
         {/* Column 1: Logo */}
-        <Link href="/" className="uppercase text-white font-medium text-[15px] z-50 relative">
-          <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="w-4 h-4 brightness-0 invert"/>
+        <Link href="/" className="relative z-50 block w-[110px] h-10">
+          <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="object-contain object-left"/>
         </Link>
 
         {/* Mobile Hamburger Button */}
@@ -38,13 +38,13 @@ export default function Navbar() {
         {/* Column 3: Nav Menu (Desktop) */}
         <div className="hidden md:flex flex-col gap-[2px]">
           <NavLink href="/" text="Home" />
-          <NavLink href="/about" text="Projects" />
+          <NavLink href="/projects" text="Projects" />
         </div>
 
         {/* Column 4: Right Menu (Desktop) */}
         <div className="hidden md:flex flex-col gap-[2px]">
-          <NavLink href="/news" text="Blogs" />
           <NavLink href="/contact" text="Contact"/>
+          <NavLink href="/blogs" text="Blogs" />
         </div>
       </div>
 
@@ -54,8 +54,8 @@ export default function Navbar() {
       >
         <div className="flex flex-col gap-6 text-[32px] font-medium tracking-tight mt-10">
           <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link href="/about" onClick={() => setIsOpen(false)}>Studio</Link>
-          <Link href="/news" onClick={() => setIsOpen(false)}>News</Link>
+          <Link href="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
+          <Link href="/blogs" onClick={() => setIsOpen(false)}>Blogs</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
           <Link href="/cart" onClick={() => setIsOpen(false)}>Cart (0)</Link>
         </div>
@@ -73,8 +73,8 @@ export default function Navbar() {
 
 function NavLink({ href, text, count }: { href: string; text: string; count?: number }) {
   return (
-    <Link href={href} className="group flex items-center gap-2 text-white overflow-hidden relative w-fit">
-      <div className="w-4 h-4 flex items-center justify-center -ml-6 group-hover:ml-0 transition-all duration-300">
+    <Link href={href} className="group flex items-center gap-1 text-white overflow-hidden relative w-fit">
+      <div className="w-4 h-4 flex items-center justify-center -ml-5 group-hover:ml-0 transition-all duration-300">
         <Image 
           src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" 
           alt="arrow" 
@@ -83,7 +83,7 @@ function NavLink({ href, text, count }: { href: string; text: string; count?: nu
           className=""
         />
       </div>
-      <span className="uppercase text-[13px] font-medium tracking-wide">
+      <span className="uppercase text-[13px] font-medium tracking-wide whitespace-nowrap">
         {text} {count !== undefined && <span className="opacity-70 ml-1">{count}</span>}
       </span>
     </Link>

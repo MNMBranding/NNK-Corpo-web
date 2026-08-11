@@ -1,36 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { newsPosts } from '../data/news';
 
-const news = [
-  {
-    image: '/assets/6760288503b490ff72c0222f_Modern Minimalist Living Room.avif',
-    date: 'October 1, 2023',
-    readTime: '5',
-    title: 'Innovations in Sustainable Urban Architecture',
-    link: '/post/innovations-in-sustainable-urban-architecture'
-  },
-  {
-    image: '/assets/6760285ad4a1aacd19d70a02_Man in Modern Architectural Setting.avif',
-    date: 'October 3, 2023',
-    readTime: '3',
-    title: 'Designing for the Future: Smart Homes and Spaces',
-    link: '/post/designing-for-the-future-smart-homes-and-spaces'
-  },
-  {
-    image: '/assets/676028778cb8c5a68be99b3f_Tranquil Modern Structure by the Lake.avif',
-    date: 'October 6, 2023',
-    readTime: '3',
-    title: 'Heritage Revival: Merging Classic and Modern Styles',
-    link: '/post/heritage-revival-merging-classic-and-modern-styles'
-  },
-  {
-    image: '/assets/6760295ca27ca0469b8142e9_Modern Minimalist Interior with Warm Hues.avif',
-    date: 'October 4, 2023',
-    readTime: '5',
-    title: 'The Power of Minimalism in Contemporary Architecture',
-    link: '/post/the-power-of-minimalism-in-contemporary-architecture'
-  }
-];
+const news = newsPosts.map((post) => ({
+  image: post.image,
+  date: post.date,
+  readTime: post.readTime,
+  title: post.title,
+  link: `/blogs/${post.slug}`,
+}));
 
 export default function LatestNews() {
   return (
@@ -63,8 +41,8 @@ export default function LatestNews() {
                 />
                 
                 {/* Arrow Icon */}
-                <div className="absolute top-0 right-0 w-12 h-12 bg-white flex items-center justify-center transition-transform duration-300 z-10">
-                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={20} className="rotate-[135deg]" />
+                <div className="absolute top-0 right-0 w-12 h-12 bg-main flex items-center justify-center transition-transform duration-300 z-10">
+                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={20} className="-rotate-45" />
                 </div>
               </div>
 

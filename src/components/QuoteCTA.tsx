@@ -1,33 +1,27 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import BorderButton from './BorderButton';
 
 export default function QuoteCTA() {
   return (
-    <section className="bg-third py-[100px] md:pt-[150px] md:pb-0 px-[3%] relative overflow-hidden rounded-[40px] md:mx-[3%] md:mt-[100px] mt-[50px] mx-[15px] min-h-[80vh] md:min-h-[130vh] flex items-center justify-center">
-      {/* Background Map Drawing */}
-      <div className="absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none">
-        <Image 
-          src="https://cdn.prod.website-files.com/675c1d31c59bdbc0d9795e5c/676018be10d094b388a7bf06_draw.avif" 
-          alt="Map Drawing Background" 
-          fill 
-          className="object-cover object-bottom"
-        />
-      </div>
+    <section className="bg-third pt-[60px] md:pt-[100px] pb-[100px] md:pb-[150px] px-[3%] relative overflow-hidden ml-[1%] mr-[1%] md:mt-[100px] mt-[50px]">
+      <div className="relative z-10 max-w-[1240px] mx-auto w-full">
+        {/* Map Drawing */}
+        <div className="relative w-full h-[50vh] md:h-[85vh] mb-16 md:mb-24">
+          <Image
+            src="https://cdn.prod.website-files.com/675c1d31c59bdbc0d9795e5c/676018be10d094b388a7bf06_draw.avif"
+            alt="Architectural Line Drawing"
+            fill
+            className="object-cover"
+          />
+        </div>
 
-      <div className="relative z-10 max-w-[1240px] mx-auto w-full text-center flex flex-col items-center">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight text-white mb-8">
             Where vision meets <span className="text-[#a1a1aa]">craftsmanship,</span> every project is thoughtfully created to <span className="text-[#a1a1aa]">inspire, endure, and leave a lasting impression</span>.
           </h2>
-          
+
           <div className="flex justify-center">
-            <Link 
-              href="/about"
-              className="group relative overflow-hidden inline-flex items-center justify-center bg-white text-main rounded-[100px] py-[18px] px-[30px] uppercase font-medium text-[15px] hover:text-white transition-colors duration-300"
-            >
-              <span className="relative z-10">Explore Our Projects</span>
-              <div className="absolute inset-0 bg-[#111111] rounded-full translate-y-[103%] group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
-            </Link>
+            <BorderButton href="/projects" text="Explore Our Projects" />
           </div>
         </div>
       </div>

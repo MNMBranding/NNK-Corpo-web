@@ -1,22 +1,10 @@
 import Image from 'next/image';
-
-const topLogos = [
-  "/assets/672b702ec9b191cc7f9c4f8b_logo-1.png",
-  "/assets/672b702eff24b29d517cec8b_logo-2.png",
-  "/assets/672b702ec9b191cc7f9c4f8f_logo-3.png",
-  "/assets/672b6a3604692d33d8ea98d0_logo-4.png",
-  "/assets/672b702ee51675bac18ffda3_logo-5.png",
-];
-
-const bottomLogos = [
-  "/assets/675c1d31c59bdbc0d9795f70_logo-2.avif",
-  "/assets/672b6ef2639f18a8d60661c2_logo-9.png",
-  "/assets/672b702e1982de8ef1a7cb2b_logo-10.png",
-  "/assets/672b702e435224ece2015a18_logo-11.png",
-  "/assets/672b702f5224af25878a88db_logo-4.png",
-];
+import { getProjectsByStatus } from '../data/projects';
 
 export default function LogoGrid() {
+  const topLogos = getProjectsByStatus('ongoing').map((project) => project.logo);
+  const bottomLogos = getProjectsByStatus('completed').map((project) => project.logo);
+
   return (
     <section className="bg-main text-white pt-[80px] pb-[120px] relative z-10 overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
@@ -71,11 +59,11 @@ function Logo({ src }: { src: string }) {
   return (
     <div className="flex items-center justify-center w-[160px] h-[50px] transition-all duration-300 opacity-60 hover:opacity-100">
       <div className="relative w-full h-full flex items-center justify-center">
-        <Image 
-          src={src} 
-          alt="Client Logo" 
+        <Image
+          src={src}
+          alt="Client Logo"
           fill
-          className="object-contain invert brightness-0 contrast-200" 
+          className="object-contain invert brightness-0 contrast-200"
         />
       </div>
     </div>

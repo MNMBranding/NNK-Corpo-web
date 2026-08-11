@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import PackagesHero from "./components/PackagesHero";
-import PackagesList from "./components/PackagesList";
+import PackagesHero from "../../components/PackagesHero";
+import PackagesList from "../../components/PackagesList";
 
 export default function Packages() {
   return (

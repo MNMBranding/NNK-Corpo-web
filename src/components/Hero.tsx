@@ -24,14 +24,14 @@ export default function Hero() {
 
     const loop = () => {
       // 1. Slow continuous movement (right to left)
-      currentX -= 0.515;
+      currentX -= 1.8;
 
       // 2. Add scroll delta
       const scrollY = window.scrollY;
       const scrollDelta = scrollY - lastScrollY;
       lastScrollY = scrollY;
       
-      currentX -= scrollDelta * 1.5;
+      currentX -= scrollDelta * 1.7;
 
       // Reset logic to make it infinite
       if (marqueeRef.current && halfWidth > 0) {
@@ -81,7 +81,7 @@ export default function Hero() {
           {/* Marquee Content */}
           <div className="flex gap-[50px] items-center pr-[50px]">
             <div className="flex items-center gap-10">
-              <span>REDEFINING LIFESTYLE | </span>
+              <span>REDEFINING LIFESTYLE  |</span>
             </div>
             <div className="flex items-center gap-10">
               <span>DISCOVER THE EXCEPTIONAL</span>
@@ -89,7 +89,7 @@ export default function Hero() {
           </div>
           <div className="flex gap-[50px] items-center pr-[50px]" aria-hidden="true">
             <div className="flex items-center gap-10">
-              <span>REDEFINING LIFESTYLE | </span>
+              <span>REDEFINING LIFESTYLE  |</span>
             </div>
             <div className="flex items-center gap-10">
               <span>DISCOVER THE EXCEPTIONAL</span>

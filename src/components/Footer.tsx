@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
+import BorderButton from './BorderButton';
 
 export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0);
@@ -51,21 +52,15 @@ export default function Footer() {
               With Us
             </h2>
           </div>
-          <Link 
-            href="/contact"
-            className="group relative overflow-hidden inline-flex items-center justify-center bg-white text-main rounded-[100px] py-[18px] px-[40px] uppercase font-medium text-[15px] hover:text-white transition-colors duration-300 w-fit shrink-0"
-          >
-            <span className="relative z-10">Contact</span>
-            <div className="absolute inset-0 bg-[#111111] rounded-full translate-y-[103%] group-hover:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
-          </Link>
+          <BorderButton href="/contact" text="Contact" />
         </div>
         
         {/* Main Links Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8 border-t border-white/10 pb-8">
           {/* Col 1 */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="text-xl font-medium tracking-wide">
-              LUNA ARC®
+            <Link href="/" className="relative block w-[130px] h-12">
+              <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="object-contain object-left"/>
             </Link>
             <p className="text-[#a1a1aa] text-sm max-w-[200px]">
               Experience Bliss Everyday
@@ -74,48 +69,18 @@ export default function Footer() {
           
           {/* Col 2 */}
           <div className="flex flex-col gap-4">
-            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Sitemap</h3>
+            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Quick Links</h3>
             <FooterLink href="/" text="Home" />
-            <FooterLink href="/about" text="Projects" />
-            <FooterLink href="/news" text="Blogs" />
+            <FooterLink href="/projects" text="Projects" />
+            <FooterLink href="/blogs" text="Blogs" />
             <FooterLink href="/contact" text="Contact" />
-          </div>
-          
-          {/* Col 3 */}
-          <div className="flex flex-col gap-4">
-            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Legal</h3>
-            <FooterLink href="/styleguide" text="Styleguide" />
-            <FooterLink href="/licenses" text="Licenses" />
-            <FooterLink href="/changelog" text="Changelog" />
-            <FooterLink href="/404" text="404 Error" />
-          </div>
-          
-          {/* Col 4 - Newsletter */}
-          <div className="flex flex-col gap-4">
-            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Subscribe to our newsletter</h3>
-            <div className="flex w-full mt-2 relative">
-              <input 
-                type="email" 
-                placeholder="E-mail" 
-                className="w-full bg-transparent border-b border-white/30 pb-3 text-white placeholder:text-[#a1a1aa] focus:outline-none focus:border-white transition-colors"
-              />
-              <button className="absolute right-0 bottom-3">
-                <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Submit" width={20} height={20} />
-              </button>
-            </div>
-            <div className="flex items-start gap-2 mt-4 cursor-pointer">
-              <input type="checkbox" id="terms" className="mt-1" />
-              <label htmlFor="terms" className="text-xs text-[#a1a1aa] cursor-pointer">
-                By subscribing you agree to with our Privacy Policy
-              </label>
-            </div>
           </div>
         </div>
         
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#a1a1aa] pt-8 border-t border-white/10">
           <div>
-            Copyright © Luna Arc — powered by Webflow
+            Copyright © {new Date().getFullYear()} NNK. All rights reserved.
           </div>
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors uppercase tracking-widest">
             Back to top ↑
