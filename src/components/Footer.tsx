@@ -3,7 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
+import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import BorderButton from './BorderButton';
+import facebookAnimation from '@/lottie/facebook.json';
+import instagramAnimation from '@/lottie/instagram.json';
+import youtubeAnimation from '@/lottie/youtube.json';
+import linkedinAnimation from '@/lottie/linkedin.json';
 
 export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0);
@@ -66,7 +71,7 @@ export default function Footer() {
               Experience Bliss Everyday
             </p>
           </div>
-          
+
           {/* Col 2 */}
           <div className="flex flex-col gap-4">
             <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Quick Links</h3>
@@ -74,6 +79,40 @@ export default function Footer() {
             <FooterLink href="/projects" text="Projects" />
             <FooterLink href="/blogs" text="Blogs" />
             <FooterLink href="/contact" text="Contact" />
+          </div>
+
+          {/* Col 3 */}
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-3">
+              <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Reach Us</h3>
+              <p className="text-sm leading-relaxed max-w-[240px]">
+                H.No. 8-1-297/SN/224, Sakkubai Nagar, Shaikpet, Hyderabad - 500008
+              </p>
+              <a href="tel:+919092290933" className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+                Mobile: +91 90922 90933
+              </a>
+              <a href="mailto:sales@nnk.co.in" className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+                E-mail: sales@nnk.co.in
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Careers &amp; General Enquiries</h3>
+              <a href="mailto:hello@nnk.co.in" className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+                E-mail: hello@nnk.co.in
+              </a>
+            </div>
+          </div>
+
+          {/* Col 4 */}
+          <div className="flex flex-col gap-4">
+            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Follow Us</h3>
+            <div className="flex flex-wrap gap-3">
+              <SocialIcon href="https://www.facebook.com/share/1ENNwFmYnM/?mibextid=wwXIfr" label="Facebook" animationData={facebookAnimation} />
+              <SocialIcon href="https://www.instagram.com/nnk.constructions?igsh=aHpraTJtejNjd3R1&utm_source=qr" label="Instagram" animationData={instagramAnimation} />
+              <SocialIcon href="https://www.youtube.com/@nnkconstructions" label="YouTube" animationData={youtubeAnimation} />
+              <SocialIcon href="https://www.linkedin.com/company/nnk-constructions" label="LinkedIn" animationData={linkedinAnimation} />
+            </div>
           </div>
         </div>
         
@@ -98,5 +137,29 @@ function FooterLink({ href, text }: { href: string; text: string }) {
     <Link href={href} className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
       {text}
     </Link>
+  );
+}
+
+function SocialIcon({ href, label, animationData }: { href: string; label: string; animationData: object }) {
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      onMouseEnter={() => lottieRef.current?.play()}
+      onMouseLeave={() => lottieRef.current?.stop()}
+      className="flex items-center justify-center w-9 h-9"
+    >
+      <Lottie
+        lottieRef={lottieRef}
+        animationData={animationData}
+        loop
+        autoplay={false}
+        className="w-9 h-9"
+      />
+    </a>
   );
 }
