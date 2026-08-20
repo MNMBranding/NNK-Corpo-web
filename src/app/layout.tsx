@@ -16,8 +16,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Luna Arc - Webflow Ecommerce website template",
-  description: "Count on Luna Arc for a refined Webflow template perfect for contemporary architectural firms.",
+  title: "NNK Constructions | Real Estate Developers in Hyderabad",
+  description: "NNK Constructions builds premium residential projects across Kokapet, Khajaguda & Shaikpet, Hyderabad. 30+ projects delivered, 2000+ happy families.",
 };
 
 export default function RootLayout({
