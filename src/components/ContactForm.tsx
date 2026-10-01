@@ -1,7 +1,7 @@
 export default function ContactForm() {
   return (
     <section className="bg-[#111111] text-white py-[100px] md:py-[200px] px-[3%] relative">
-      <div className="max-w-[1240px] mx-auto w-full">
+      <div className="max-w-[1760px] mx-auto w-full">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px]">
           

@@ -3,7 +3,7 @@ import { NearbyCategory } from '../data/projects';
 export default function NearbyLocations({ locations }: { locations: NearbyCategory[] }) {
   return (
     <section className="bg-main text-white py-[80px] md:py-[140px] px-[3%]">
-      <div className="max-w-[1240px] mx-auto w-full">
+      <div className="max-w-[1760px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px] mb-[60px] md:mb-[80px]">
           <div className="md:col-start-1 md:col-end-4 pt-2">
             <span className="uppercase text-sm tracking-wide opacity-80">

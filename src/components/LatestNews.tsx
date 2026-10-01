@@ -13,7 +13,7 @@ const news = newsPosts.map((post) => ({
 export default function LatestNews() {
   return (
     <section className="bg-third text-white py-[100px] md:py-[200px] overflow-hidden px-[3%]">
-      <div className="max-w-[1240px] mx-auto w-full relative">
+      <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-32">
           <div className="md:col-start-1 md:col-end-3 pt-2">

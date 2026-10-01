@@ -28,7 +28,7 @@ export default function FAQSection() {
 
   return (
     <section className="bg-main text-white py-[100px] md:py-[200px] px-[3%]">
-      <div className="max-w-[1240px] mx-auto w-full">
+      <div className="max-w-[1760px] mx-auto w-full">
         
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px] mb-[100px]">

@@ -39,3 +39,21 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+/* Custom circle cursor — an OS-drawn cursor image, so it moves exactly like the
+   normal mouse pointer with no lag. Bigger circle over anything clickable. */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: url('/cursor.svg') 10 10, auto !important;
+  }
+
+  a, a *,
+  button, button *,
+  [role="button"], [role="button"] *,
+  input, textarea, select, label, summary,
+  .cursor-grab, .cursor-zoom-in {
+    cursor: url('/cursor-hover.svg') 24 24, pointer !important;
+  }
+}

@@ -30,7 +30,7 @@ export default function NewsGrid() {
 
   return (
     <section className="bg-third pt-[150px] pb-[100px] md:pb-[200px] px-[3%] relative overflow-hidden rounded-[40px] md:mx-[3%] mt-[50px] md:mt-[100px] mx-[15px] mb-[100px] md:mb-[200px]">
-      <div className="max-w-[1240px] mx-auto w-full text-white relative z-10">
+      <div className="max-w-[1760px] mx-auto w-full text-white relative z-10">
 
         <Link href={`/blogs/${featured.slug}`} className="group block mb-16 md:mb-24">
           <div className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden mb-6">

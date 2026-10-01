@@ -66,7 +66,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-main text-white py-[100px] md:py-[200px] overflow-hidden">
-      <div className="max-w-[1240px] mx-auto w-full px-[3%] mb-16 md:mb-32">
+      <div className="max-w-[1760px] mx-auto w-full px-[3%] mb-16 md:mb-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0">
           <div className="md:col-start-1 md:col-end-3 pt-2">
             <span className="uppercase text-sm tracking-wide opacity-80">
@@ -74,7 +74,7 @@ export default function Testimonials() {
             </span>
           </div>
           <div className="md:col-start-4 md:col-end-10">
-            <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight">
+            <h2 className="text-[8vw] md:text-[3vw] leading-[1.15] font-medium tracking-tight">
               Discover the impact we've made for our clients.
             </h2>
           </div>
@@ -95,10 +95,10 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto w-full group">
+      <div className="relative w-full group">
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 px-5 md:px-[5%]"
+          className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 px-5 md:px-[3%]"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {slides.map((slide, idx) => (

@@ -22,7 +22,7 @@ export default function NewsPostDetail({ post }: { post: NewsPost }) {
         </div>
 
         <section className="py-[80px] md:py-[120px] px-[3%]">
-          <div className="max-w-[1240px] mx-auto w-full">
+          <div className="max-w-[1760px] mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-y-0 mb-12 md:mb-16">
               <div className="md:col-start-1 md:col-end-3 pt-2">
                 <span className="uppercase text-sm tracking-wide opacity-80">{post.date}</span>

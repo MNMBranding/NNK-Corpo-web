@@ -61,7 +61,7 @@ export default function ProjectSpecs({ project }: { project: Project }) {
 
   return (
     <section className="bg-main text-white py-[80px] md:py-[120px] px-[3%]">
-      <div className="max-w-[1240px] mx-auto w-full">
+      <div className="max-w-[1760px] mx-auto w-full">
         <div className="mb-12 md:mb-16">
           <span className="uppercase text-sm tracking-wide opacity-80 block mb-4">
             Project Overview

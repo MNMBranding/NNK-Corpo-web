@@ -45,7 +45,7 @@ export default function Footer() {
         ref={footerRef}
         className="fixed bottom-0 left-0 w-full bg-[#111111] text-white pt-[60px] pb-[30px] px-[3%] z-0 border-t border-white/10"
       >
-        <div className="max-w-[1240px] mx-auto w-full">
+        <div className="max-w-[1760px] mx-auto w-full">
         
         {/* Top Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">

@@ -12,7 +12,7 @@ const stats = [
 export default function MissionVision() {
   return (
     <section className="bg-main text-white py-[100px] md:py-[200px] px-[3%] overflow-hidden">
-      <div className="max-w-[1240px] mx-auto w-full relative">
+      <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-[10vw] md:gap-y-[6vw]">
 
@@ -23,8 +23,8 @@ export default function MissionVision() {
             </span>
           </div>
 
-          <div className="md:col-start-5 md:col-end-12">
-            <h2 className="text-[10vw] md:text-[4vw] leading-[1.1] font-medium tracking-tight">
+          <div className="md:col-start-4 md:col-end-13">
+            <h2 className="text-[8vw] md:text-[3vw] leading-[1.15] font-medium tracking-tight">
               <span className="text-[#a1a1aa]">NNK</span>
               {" "} creates iconic spaces through expertise, innovation, and excellence, delivering trusted, thoughtfully designed landmarks that inspire modern living and lasting value.            </h2>
           </div>

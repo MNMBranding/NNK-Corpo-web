@@ -22,7 +22,7 @@ export default function FloorPlan({
 
   return (
     <section className="bg-third text-white py-[80px] md:py-[140px] px-[3%] rounded-[40px] md:mx-[3%] mx-[15px] mb-[50px] md:mb-[100px] overflow-hidden">
-      <div className="max-w-[1240px] mx-auto w-full">
+      <div className="max-w-[1760px] mx-auto w-full">
         <Carousel
           label="Floor Plan"
           heading={<>Every corner, <span className="text-[#a1a1aa]">planned</span>.</>}

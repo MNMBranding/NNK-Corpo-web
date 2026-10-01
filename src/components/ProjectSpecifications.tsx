@@ -3,7 +3,7 @@ import { standardSpecifications } from '../data/specifications';
 export default function ProjectSpecifications() {
   return (
     <section className="bg-third text-white py-[80px] md:py-[140px] px-[3%] rounded-[40px] md:mx-[3%] mx-[15px] mb-[50px] md:mb-[100px]">
-      <div className="max-w-[1240px] mx-auto w-full">
+      <div className="max-w-[1760px] mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px] mb-[80px]">
           <div className="md:col-start-1 md:col-end-4 pt-2">
             <span className="uppercase text-sm tracking-wide opacity-80">

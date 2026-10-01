@@ -23,7 +23,7 @@ export default function ProjectsPage() {
         <ProjectsHero />
 
         <section className="pt-[100px] md:pt-[150px] pb-[60px] md:pb-[80px] px-[3%]">
-          <div className="max-w-[1240px] mx-auto w-full">
+          <div className="max-w-[1760px] mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-24">
               <div className="md:col-start-1 md:col-end-3 pt-2">
                 <span className="uppercase text-sm tracking-wide opacity-80">Ongoing</span>
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
         </section>
 
         <section className="pt-[60px] md:pt-[100px] pb-[100px] md:pb-[150px] px-[3%]">
-          <div className="max-w-[1240px] mx-auto w-full">
+          <div className="max-w-[1760px] mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-24">
               <div className="md:col-start-1 md:col-end-3 pt-2">
                 <span className="uppercase text-sm tracking-wide opacity-80">Completed</span>

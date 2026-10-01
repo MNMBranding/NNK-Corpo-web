@@ -10,7 +10,7 @@ export default function Services() {
 
   return (
     <section className="bg-main text-white py-[100px] md:py-[200px] px-[3%] overflow-hidden">
-      <div className="max-w-[1240px] mx-auto w-full relative">
+      <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-32">
           <div className="md:col-start-1 md:col-end-3 pt-2">
@@ -18,8 +18,8 @@ export default function Services() {
               PROJECTS AT A GLANCE
             </span>
           </div>
-          <div className="md:col-start-5 md:col-end-12">
-            <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight">
+          <div className="md:col-start-4 md:col-end-13">
+            <h2 className="text-[8vw] md:text-[3vw] leading-[1.15] font-medium tracking-tight">
               A curated portfolio of  iconic residences, defined by<span className="text-[#a1a1aa]"> timeless elegance, architectural excellence, and refined living</span>.
             </h2>
           </div>
