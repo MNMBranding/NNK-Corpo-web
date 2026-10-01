@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "../components/CustomCursor";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
           }}
         ></div>
         {children}
+        <CustomCursor />
       </body>
     </html>
   );
