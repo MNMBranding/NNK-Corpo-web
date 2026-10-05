@@ -2,7 +2,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ProjectHero from "./ProjectHero";
 import ProjectSpecs from "./ProjectSpecs";
-import Gallery from "./Gallery";
 import FloorPlan from "./FloorPlan";
 import NearbyLocations from "./NearbyLocations";
 import LocationMap from "./LocationMap";
@@ -18,7 +17,6 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <Navbar />
         <ProjectHero project={project} />
         <ProjectSpecs project={project} />
-        <Gallery images={[project.image, ...project.gallery]} name={project.name} />
         <FloorPlan floorPlans={project.floorPlans} masterPlan={project.masterPlan} name={project.name} />
         {project.nearbyLocations && <NearbyLocations locations={project.nearbyLocations} />}
         <LocationMap address={project.address} name={project.name} />

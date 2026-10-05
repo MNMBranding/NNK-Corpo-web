@@ -75,15 +75,17 @@ export default function Carousel({
           <div
             key={`${src}-${idx}`}
             onClick={lightbox ? () => setLightboxIndex(idx) : undefined}
-            className={`relative flex-none snap-center shrink-0 bg-[#0c0c0c] overflow-hidden ${slideClassName} ${lightbox ? 'cursor-zoom-in' : ''}`}
+            className={`relative flex flex-col flex-none snap-center shrink-0 first:ml-auto last:mr-auto bg-[#0c0c0c] overflow-hidden ${slideClassName} ${lightbox ? 'cursor-zoom-in' : ''}`}
           >
-            <Image
-              src={src}
-              alt={`${alt} ${idx + 1}`}
-              fill
-              sizes="(max-width: 768px) 100vw, 1200px"
-              className={fit === 'contain' ? 'object-contain p-4 md:p-10' : 'object-cover'}
-            />
+            <div className="relative flex-1 min-h-0">
+              <Image
+                src={src}
+                alt={`${alt} ${idx + 1}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className={fit === 'contain' ? 'object-contain px-4 pt-14 pb-4 md:px-10 md:pt-16 md:pb-10' : 'object-cover'}
+              />
+            </div>
 
             {labels && labels[idx] && (
               <span className="absolute top-4 left-4 uppercase text-[11px] tracking-widest bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded-full">
@@ -92,7 +94,7 @@ export default function Carousel({
             )}
 
             {captions && captions[idx] && (
-              <div className="absolute bottom-4 left-4 max-w-[85%] bg-black/60 backdrop-blur-sm text-white text-xs md:text-sm px-4 py-2.5 rounded-xl leading-snug">
+              <div className="border-t border-white/10 text-white text-xs md:text-sm px-4 md:px-6 py-3 md:py-4 leading-snug">
                 {captions[idx]}
               </div>
             )}

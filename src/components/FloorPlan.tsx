@@ -31,7 +31,7 @@ export default function FloorPlan({
           fit="contain"
           labels={labels}
           captions={captions}
-          slideClassName="w-[90vw] md:w-[700px] h-[350px] md:h-[480px]"
+          slideClassName={images.length === 1 ? 'w-full h-[420px] md:h-[640px]' : 'w-[90vw] md:w-[700px] h-[420px] md:h-[560px]'}
           lightbox
         />
       </div>

@@ -38,12 +38,12 @@ export default function Footer() {
   return (
     <>
       {/* Spacer that pushes the document scroll down exactly by the footer's height */}
-      <div style={{ height: footerHeight }} className="w-full pointer-events-none" />
+      <div style={{ height: footerHeight }} className="hidden md:block w-full pointer-events-none" />
 
-      {/* The actual footer stays fixed behind the page content */}
+      {/* On desktop the footer stays fixed behind the page content; on mobile it is taller than the screen, so it scrolls normally */}
       <footer 
         ref={footerRef}
-        className="fixed bottom-0 left-0 w-full bg-[#111111] text-white pt-[60px] pb-[30px] px-[3%] z-0 border-t border-white/10"
+        className="relative md:fixed md:bottom-0 md:left-0 w-full bg-[#111111] text-white pt-[60px] pb-[30px] px-5 md:px-[3%] z-0 border-t border-white/10"
       >
         <div className="max-w-[1760px] mx-auto w-full">
         
@@ -61,9 +61,9 @@ export default function Footer() {
         </div>
         
         {/* Main Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8 border-t border-white/10 pb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8 pt-8 border-t border-white/10 pb-8">
           {/* Col 1 */}
-          <div className="flex flex-col gap-6">
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-6">
             <Link href="/" className="relative block w-[130px] h-12">
               <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="object-contain object-left"/>
             </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 */}
-          <div className="flex flex-col gap-8">
+          <div className="col-span-2 md:col-span-1 max-md:order-last flex flex-col gap-8">
             <div className="flex flex-col gap-3">
               <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Reach Us</h3>
               <p className="text-sm leading-relaxed max-w-[240px]">
@@ -107,7 +107,7 @@ export default function Footer() {
           {/* Col 4 */}
           <div className="flex flex-col gap-4">
             <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Follow Us</h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-4 gap-2 max-w-[152px] md:flex md:items-center md:gap-3 md:max-w-none">
               <SocialIcon href="https://www.facebook.com/share/1ENNwFmYnM/?mibextid=wwXIfr" label="Facebook" animationData={facebookAnimation} />
               <SocialIcon href="https://www.instagram.com/nnk.constructions?igsh=aHpraTJtejNjd3R1&utm_source=qr" label="Instagram" animationData={instagramAnimation} />
               <SocialIcon href="https://www.youtube.com/@nnkconstructions" label="YouTube" animationData={youtubeAnimation} />
@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
         
         {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#a1a1aa] pt-8 border-t border-white/10">
+        <div className="flex flex-wrap justify-between items-center gap-4 text-xs text-[#a1a1aa] pt-8 border-t border-white/10">
           <div>
             Copyright © {new Date().getFullYear()} NNK. All rights reserved.
           </div>
@@ -151,14 +151,14 @@ function SocialIcon({ href, label, animationData }: { href: string; label: strin
       aria-label={label}
       onMouseEnter={() => lottieRef.current?.play()}
       onMouseLeave={() => lottieRef.current?.stop()}
-      className="flex items-center justify-center w-9 h-9"
+      className="flex items-center justify-center aspect-square md:w-9 md:h-9"
     >
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
         loop
         autoplay={false}
-        className="w-9 h-9"
+        className="w-full h-full"
       />
     </a>
   );
