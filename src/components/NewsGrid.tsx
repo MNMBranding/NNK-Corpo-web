@@ -19,7 +19,7 @@ function Meta({ date, readTime }: { date: string; readTime: string }) {
 
 function ArrowBadge() {
   return (
-    <div className="absolute top-4 right-4 w-11 h-11 bg-main flex items-center justify-center opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-10">
+    <div className="absolute top-4 right-4 w-11 h-11 bg-main flex items-center justify-center opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-coarse:opacity-100 max-md:opacity-100 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-all duration-300 z-10">
       <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={18} height={18} className="-rotate-45" />
     </div>
   );
@@ -29,7 +29,7 @@ export default function NewsGrid() {
   const [featured, ...rest] = newsPosts;
 
   return (
-    <section className="bg-third pt-[150px] pb-[100px] md:pb-[200px] px-[3%] relative overflow-hidden rounded-[40px] md:mx-[3%] mt-[50px] md:mt-[100px] mx-[15px] mb-[100px] md:mb-[200px]">
+    <section className="bg-third pt-[40px] md:pt-[150px] pb-[60px] md:pb-[200px] px-5 md:px-[3%] relative overflow-hidden rounded-[40px] md:mx-[3%] mt-[50px] md:mt-[100px] mx-[15px] mb-[60px] md:mb-[200px]">
       <div className="max-w-[1760px] mx-auto w-full text-white relative z-10">
 
         <Link href={`/blogs/${featured.slug}`} className="group block mb-16 md:mb-24">
@@ -39,17 +39,17 @@ export default function NewsGrid() {
               alt={featured.title}
               fill
               sizes="(max-width: 768px) 100vw, 1200px"
-              className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              className="object-cover"
               priority
             />
             <ArrowBadge />
           </div>
 
           <Meta date={featured.date} readTime={featured.readTime} />
-          <h3 className="text-2xl md:text-[2.5vw] font-medium leading-snug truncate group-hover:opacity-80 transition-opacity">
+          <h3 className="text-2xl md:text-[length:clamp(24px,2.5vw,44px)] font-medium leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity">
             {featured.title}
           </h3>
-          <p className="mt-2 text-body text-sm md:text-base opacity-80 truncate max-w-2xl">
+          <p className="mt-2 text-body text-sm md:text-base opacity-80 line-clamp-2 max-w-2xl">
             {featured.excerpt}
           </p>
         </Link>
@@ -63,16 +63,16 @@ export default function NewsGrid() {
                   alt={post.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover"
                 />
                 <ArrowBadge />
               </div>
 
               <Meta date={post.date} readTime={post.readTime} />
-              <h3 className="text-xl font-medium leading-snug truncate group-hover:opacity-80 transition-opacity">
+              <h3 className="text-xl font-medium leading-snug line-clamp-2 group-hover:opacity-80 transition-opacity">
                 {post.title}
               </h3>
-              <p className="mt-1 text-body text-sm opacity-70 truncate">
+              <p className="mt-1 text-body text-sm opacity-70 line-clamp-2">
                 {post.excerpt}
               </p>
             </Link>

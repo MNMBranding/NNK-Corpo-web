@@ -11,7 +11,7 @@ const stats = [
 
 export default function MissionVision() {
   return (
-    <section className="bg-main text-white py-[100px] md:py-[200px] px-[3%] overflow-hidden">
+    <section className="bg-main text-white py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%] overflow-hidden">
       <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-[10vw] md:gap-y-[6vw]">
@@ -24,19 +24,19 @@ export default function MissionVision() {
           </div>
 
           <div className="md:col-start-4 md:col-end-13">
-            <h2 className="text-[8vw] md:text-[3vw] leading-[1.15] font-medium tracking-tight">
+            <h2 className="text-[8vw] md:text-[length:min(3vw,53px)] leading-[1.15] font-medium tracking-tight">
               <span className="text-[#a1a1aa]">NNK</span>
               {" "} creates iconic spaces through expertise, innovation, and excellence, delivering trusted, thoughtfully designed landmarks that inspire modern living and lasting value.            </h2>
           </div>
 
-          <div className="md:col-start-2 md:col-end-13 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 md:gap-y-0 md:pt-10">
+          <div className="md:col-start-2 md:col-end-13 grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-0 md:pt-10">
             {stats.map((stat, idx) => (
               <div key={idx}>
                 <Counter
                   value={stat.value}
                   prefix={stat.prefix}
                   suffix={stat.suffix}
-                  className="text-[13vw] md:text-[3.2vw] leading-[0.9] font-medium tracking-tighter"
+                  className="text-[7vw] md:text-[length:min(3.2vw,56px)] leading-[1] font-medium tracking-tighter"
                 />
                 <p className="uppercase text-sm tracking-wide mt-2 opacity-80">
                   {stat.label}

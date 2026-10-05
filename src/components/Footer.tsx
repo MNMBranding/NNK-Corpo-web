@@ -50,10 +50,10 @@ export default function Footer() {
         {/* Top Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
           <div>
-            <h2 className="text-[12vw] md:text-[6vw] leading-[1] font-medium tracking-tight">
+            <h2 className="text-[12vw] md:text-[length:min(6vw,106px)] leading-[1] font-medium tracking-tight">
               Connect
             </h2>
-            <h2 className="text-[12vw] md:text-[6vw] leading-[1] font-medium tracking-tight text-[#a1a1aa]">
+            <h2 className="text-[12vw] md:text-[length:min(6vw,106px)] leading-[1] font-medium tracking-tight text-[#a1a1aa]">
               With Us
             </h2>
           </div>
@@ -149,7 +149,7 @@ function SocialIcon({ href, label, animationData }: { href: string; label: strin
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      onMouseEnter={() => lottieRef.current?.play()}
+      onMouseEnter={() => window.matchMedia('(hover: hover)').matches && lottieRef.current?.play()}
       onMouseLeave={() => lottieRef.current?.stop()}
       className="flex items-center justify-center aspect-square md:w-9 md:h-9"
     >

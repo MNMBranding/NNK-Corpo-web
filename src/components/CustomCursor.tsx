@@ -83,7 +83,7 @@ export default function CustomCursor() {
       ref={cursorRef}
       aria-hidden="true"
       data-visible="false"
-      className="group hidden pointer-fine:block fixed top-0 left-0 z-[10000] pointer-events-none mix-blend-difference will-change-transform"
+      className="group hidden [@media(hover:hover)_and_(pointer:fine)]:block fixed top-0 left-0 z-[10000] pointer-events-none mix-blend-difference will-change-transform"
     >
       {/* Always 56px; scaled down to 18px at rest so size changes stay on the GPU */}
       <div

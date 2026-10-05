@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 bg-main text-white pt-[60px] pb-[60px] md:pt-[120px] md:pb-[66px] text-[16vw] font-semibold leading-tight whitespace-nowrap overflow-hidden tracking-[-1px]">
+      <div className="relative z-10 bg-main text-white pt-[60px] pb-[60px] md:pt-[120px] md:pb-[66px] text-[length:min(16vw,282px)] font-semibold leading-tight whitespace-nowrap overflow-hidden tracking-[-1px]">
         <div 
           ref={marqueeRef}
           className="flex w-fit will-change-transform"

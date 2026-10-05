@@ -44,21 +44,21 @@ export default function Carousel({
           <span className="uppercase text-sm tracking-wide opacity-80">{label}</span>
         </div>
         <div className="md:col-start-4 md:col-end-11">
-          <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight">{heading}</h2>
+          <h2 className="text-[10vw] md:text-[length:min(5vw,88px)] leading-[1.1] font-medium tracking-tight">{heading}</h2>
         </div>
         {images.length > 1 && (
           <div className="md:col-start-11 md:col-end-13 flex justify-end items-end gap-[2px] mt-6 md:mt-0">
             <button
               onClick={() => scrollByOneSlide(-1)}
               aria-label="Previous"
-              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center transition-colors"
+              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors"
             >
               <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} />
             </button>
             <button
               onClick={() => scrollByOneSlide(1)}
               aria-label="Next"
-              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center transition-colors"
+              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors"
             >
               <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} />
             </button>
@@ -150,7 +150,7 @@ export function Lightbox({
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-6 right-6 md:top-8 md:right-8 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
+        className="absolute top-6 right-6 md:top-8 md:right-8 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 6L6 18M6 6l12 12" />
@@ -165,7 +165,7 @@ export function Lightbox({
               onNavigate((index - 1 + images.length) % images.length);
             }}
             aria-label="Previous"
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
           >
             <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} />
           </button>
@@ -175,7 +175,7 @@ export function Lightbox({
               onNavigate((index + 1) % images.length);
             }}
             aria-label="Next"
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
           >
             <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} />
           </button>

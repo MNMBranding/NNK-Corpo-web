@@ -1,6 +1,6 @@
 export default function ContactForm() {
   return (
-    <section className="bg-[#111111] text-white py-[100px] md:py-[200px] px-[3%] relative">
+    <section className="bg-[#111111] text-white py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%] relative">
       <div className="max-w-[1760px] mx-auto w-full">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px]">
@@ -12,7 +12,7 @@ export default function ContactForm() {
           </div>
 
           <div className="md:col-start-4 md:col-end-13">
-            <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight mb-[50px] md:mb-[5vw]">
+            <h2 className="text-[10vw] md:text-[length:min(5vw,88px)] leading-[1.1] font-medium tracking-tight mb-[50px] md:mb-[5vw]">
               Get your <span className="text-[#a1a1aa]">custom quote</span> for innovative architectural solutions.
             </h2>
             
@@ -60,7 +60,7 @@ export default function ContactForm() {
                 <div className="md:col-span-2 flex justify-end">
                   <button 
                     type="submit" 
-                    className="bg-white text-main h-[60px] px-10 font-semibold text-lg hover:bg-[#111111] hover:text-white transition-colors duration-300 inline-flex items-center justify-center border border-transparent hover:border-[#262626]"
+                    className="bg-white text-main h-[60px] px-10 font-semibold text-lg hover:bg-[#111111] hover:text-white pointer-coarse:bg-[#111111] max-md:bg-[#111111] pointer-coarse:text-white max-md:text-white pointer-coarse:border-[#262626] max-md:border-[#262626] transition-colors duration-300 inline-flex items-center justify-center border border-transparent hover:border-[#262626]"
                   >
                     Get in Touch
                   </button>

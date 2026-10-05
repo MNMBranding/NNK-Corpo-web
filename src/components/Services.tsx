@@ -9,7 +9,7 @@ export default function Services() {
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
   return (
-    <section className="bg-main text-white py-[100px] md:py-[200px] px-[3%] overflow-hidden">
+    <section className="bg-main text-white py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%] overflow-hidden">
       <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-32">
@@ -19,7 +19,7 @@ export default function Services() {
             </span>
           </div>
           <div className="md:col-start-4 md:col-end-13">
-            <h2 className="text-[8vw] md:text-[3vw] leading-[1.15] font-medium tracking-tight">
+            <h2 className="text-[8vw] md:text-[length:min(3vw,53px)] leading-[1.15] font-medium tracking-tight">
               A curated portfolio of  iconic residences, defined by<span className="text-[#a1a1aa]"> timeless elegance, architectural excellence, and refined living</span>.
             </h2>
           </div>

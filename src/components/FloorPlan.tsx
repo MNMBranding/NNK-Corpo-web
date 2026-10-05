@@ -21,7 +21,7 @@ export default function FloorPlan({
   if (images.length === 0) return null;
 
   return (
-    <section className="bg-third text-white py-[80px] md:py-[140px] px-[3%] rounded-[40px] md:mx-[3%] mx-[15px] mb-[50px] md:mb-[100px] overflow-hidden">
+    <section className="bg-third text-white py-[56px] md:py-[140px] px-5 md:px-[3%] rounded-[40px] md:mx-[3%] mx-[15px] mb-[50px] md:mb-[100px] overflow-hidden">
       <div className="max-w-[1760px] mx-auto w-full">
         <Carousel
           label="Floor Plan"
@@ -31,7 +31,7 @@ export default function FloorPlan({
           fit="contain"
           labels={labels}
           captions={captions}
-          slideClassName={images.length === 1 ? 'w-full h-[420px] md:h-[640px]' : 'w-[90vw] md:w-[700px] h-[420px] md:h-[560px]'}
+          slideClassName={images.length === 1 ? 'w-full h-[300px] sm:h-[420px] md:h-[640px] 2xl:h-[820px]' : 'w-[85vw] md:w-[700px] h-[320px] sm:h-[420px] md:h-[560px]'}
           lightbox
         />
       </div>

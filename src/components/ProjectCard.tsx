@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         alt={project.name}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+        className="object-cover"
       />
 
       {/* Overlay Gradient */}
@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Hover Arrow */}
-      <div className="absolute bottom-6 right-6 bg-[#141414]/90 backdrop-blur-sm rounded-full w-[80px] h-[80px] flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+      <div className="absolute bottom-6 right-6 bg-[#141414]/90 backdrop-blur-sm rounded-full w-[80px] h-[80px] flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 pointer-coarse:opacity-100 max-md:opacity-100 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-all duration-300 pointer-events-none">
         <span className="text-white text-[40px] leading-none font-light block pb-[4px]">
           +
         </span>

@@ -12,7 +12,7 @@ const news = newsPosts.map((post) => ({
 
 export default function LatestNews() {
   return (
-    <section className="bg-third text-white py-[100px] md:py-[200px] overflow-hidden px-[3%]">
+    <section className="bg-third text-white py-[72px] md:py-[140px] lg:py-[200px] overflow-hidden px-5 md:px-[3%]">
       <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-32">
@@ -22,14 +22,14 @@ export default function LatestNews() {
             </span>
           </div>
           <div className="md:col-start-5 md:col-end-12">
-            <h2 className="text-[10vw] md:text-[5vw] leading-[1.1] font-medium tracking-tight">
+            <h2 className="text-[10vw] md:text-[length:min(5vw,88px)] leading-[1.1] font-medium tracking-tight">
               Stories That Inspire Every Project 
             </h2>
           </div>
         </div>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {news.map((item, idx) => (
             <Link key={idx} href={item.link} className="group block">
               <div className="relative aspect-[4/5] w-full overflow-hidden mb-6">
@@ -37,7 +37,7 @@ export default function LatestNews() {
                   src={item.image} 
                   alt={item.title} 
                   fill 
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                  className="object-cover" 
                 />
                 
                 {/* Arrow Icon */}

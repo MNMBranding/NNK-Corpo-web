@@ -19,7 +19,7 @@ export default function ProjectHero({ project }: { project: Project }) {
         <span className="uppercase text-sm tracking-wide opacity-80 block mb-4">
           {project.status === 'ongoing' ? 'Ongoing Project' : 'Completed Project'}
         </span>
-        <h1 className="text-[12vw] md:text-[6vw] leading-[1.1] font-medium tracking-tight mb-6">
+        <h1 className="text-[12vw] md:text-[length:min(6vw,106px)] leading-[1.1] font-medium tracking-tight mb-6">
           {project.name}
         </h1>
         <p className="text-xl md:text-[27px] font-medium leading-snug text-[#a1a1aa] max-w-2xl">
