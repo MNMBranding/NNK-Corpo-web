@@ -6,7 +6,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={projectPath(project)}
-      className="group relative h-[400px] md:h-[600px] block overflow-hidden bg-[#141414]"
+      className="group relative h-[400px] md:h-[600px] block overflow-hidden bg-surface-2 text-white"
     >
       {/* Image Background */}
       <Image
@@ -31,8 +31,8 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Hover Arrow */}
-      <div className="absolute bottom-6 right-6 bg-[#141414]/90 backdrop-blur-sm rounded-full w-[80px] h-[80px] flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 pointer-coarse:opacity-100 max-md:opacity-100 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-all duration-300 pointer-events-none">
-        <span className="text-white text-[40px] leading-none font-light block pb-[4px]">
+      <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm rounded-full w-[80px] h-[80px] flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 pointer-coarse:opacity-100 max-md:opacity-100 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-all duration-300 pointer-events-none">
+        <span className="text-ink text-[40px] leading-none font-light block pb-[4px]">
           +
         </span>
       </div>

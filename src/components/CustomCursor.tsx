@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 // Elements that make the cursor grow on hover
-const INTERACTIVE = 'a, button, [role="button"], input, textarea, select, label, summary, .cursor-grab, .cursor-zoom-in';
+const INTERACTIVE = 'a, button, [role="button"], input, textarea, select, label, summary, [role="option"], .cursor-grab, .cursor-zoom-in';
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);

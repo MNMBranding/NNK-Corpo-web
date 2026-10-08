@@ -3,7 +3,7 @@ import { Project } from '../data/projects';
 
 export default function ProjectHero({ project }: { project: Project }) {
   return (
-    <section className="relative w-full md:h-screen overflow-hidden bg-main text-white">
+    <section className="relative w-full md:h-screen overflow-hidden bg-surface text-ink md:text-white">
       <Image
         src={project.image}
         alt={project.name}
@@ -19,10 +19,10 @@ export default function ProjectHero({ project }: { project: Project }) {
         <span className="uppercase text-sm tracking-wide opacity-80 block mb-4">
           {project.status === 'ongoing' ? 'Ongoing Project' : 'Completed Project'}
         </span>
-        <h1 className="text-[12vw] md:text-[length:min(6vw,106px)] leading-[1.1] font-medium tracking-tight mb-6">
+        <h1 className="text-[14vw] md:text-[length:min(8vw,120px)] leading-[1.1] font-medium tracking-tight mb-6">
           {project.name}
         </h1>
-        <p className="text-xl md:text-[27px] font-medium leading-snug text-[#a1a1aa] max-w-2xl">
+        <p className="text-xl md:text-[27px] font-medium leading-snug text-muted md:text-[#a1a1aa] max-w-2xl">
           {project.tagline}
         </p>
       </div>

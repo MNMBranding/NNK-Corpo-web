@@ -32,13 +32,6 @@ export default function RootLayout({
       className={`${instrumentSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans relative">
-        <div
-          className="fixed inset-0 z-[9999] pointer-events-none opacity-[0.04]"
-          style={{
-            backgroundImage: `url('/assets/noise-dots.gif')`,
-            backgroundRepeat: 'repeat',
-          }}
-        ></div>
         {children}
         <CustomCursor />
       </body>

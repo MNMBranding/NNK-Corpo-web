@@ -27,19 +27,19 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="bg-main text-white py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%]">
+    <section className="bg-surface text-ink py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%]">
       <div className="max-w-[1760px] mx-auto w-full">
         
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px] mb-[56px] md:mb-[100px]">
           <div className="md:col-start-1 md:col-end-4 pt-2">
-            <span className="uppercase text-sm tracking-wide opacity-80 text-white">
+            <span className="uppercase text-sm tracking-wide opacity-80 text-ink">
               FAQ
             </span>
           </div>
           <div className="md:col-start-4 md:col-end-13">
-            <h2 className="text-[10vw] md:text-[length:min(5vw,88px)] leading-[1.1] font-medium tracking-tight text-white">
-              Frequently <span className="text-[#a1a1aa]">asked questions</span> about our architectural services.
+            <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.1] font-medium tracking-tight text-ink">
+              Frequently <span className="text-muted">asked questions</span> about our architectural services.
             </h2>
           </div>
         </div>
@@ -48,11 +48,11 @@ export default function FAQSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[50px] gap-y-[48px] md:gap-y-[80px]">
           {faqs.map((faq, idx) => (
             <div key={idx} className="md:pr-[5vw]">
-              <div className="text-[22px] md:text-[27px] font-medium leading-[1.2] text-white">
+              <div className="text-[22px] md:text-[27px] font-medium leading-[1.2] text-ink">
                 {faq.question}
               </div>
-              <div className="h-[1px] bg-[#262626] my-[25px]" />
-              <p className="text-[#a1a1aa] text-[17px] md:text-[21px] leading-[1.4]">
+              <div className="h-[1px] bg-black/10 my-[25px]" />
+              <p className="text-muted text-[17px] md:text-[21px] leading-[1.4]">
                 {faq.answer}
               </p>
             </div>

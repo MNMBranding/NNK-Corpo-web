@@ -11,7 +11,7 @@ const stats = [
 
 export default function MissionVision() {
   return (
-    <section className="bg-main text-white py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%] overflow-hidden">
+    <section className="bg-surface text-ink py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%] overflow-hidden">
       <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-[10vw] md:gap-y-[6vw]">
@@ -24,8 +24,8 @@ export default function MissionVision() {
           </div>
 
           <div className="md:col-start-4 md:col-end-13">
-            <h2 className="text-[8vw] md:text-[length:min(3vw,53px)] leading-[1.15] font-medium tracking-tight">
-              <span className="text-[#a1a1aa]">NNK</span>
+            <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.15] font-medium tracking-tight">
+              <span className="text-muted">NNK</span>
               {" "} creates iconic spaces through expertise, innovation, and excellence, delivering trusted, thoughtfully designed landmarks that inspire modern living and lasting value.            </h2>
           </div>
 

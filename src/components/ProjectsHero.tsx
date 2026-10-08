@@ -84,12 +84,12 @@ export default function ProjectsHero() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full md:h-[80dvh] overflow-hidden bg-main text-white flex flex-col md:items-center md:justify-center pt-10 pb-6 md:p-0"
+      className="relative w-full md:h-[80dvh] overflow-hidden bg-surface text-ink flex flex-col md:items-center md:justify-center pt-10 pb-6 md:p-0"
     >
       {trail.map((item) => (
         <div
           key={item.id}
-          className="absolute pointer-events-none"
+          className="absolute z-20 pointer-events-none"
           style={{
             left: item.x,
             top: item.y,
@@ -103,7 +103,7 @@ export default function ProjectsHero() {
       ))}
 
       <div className="relative z-10 text-center px-[6%]">
-        <h1 className="text-[16vw] md:text-[length:min(9vw,158px)] leading-[0.95] font-semibold tracking-tight uppercase">
+        <h1 className="text-[14vw] md:text-[length:min(8vw,120px)] leading-[0.95] font-semibold tracking-tight uppercase">
           Projects
         </h1>
       </div>
@@ -148,14 +148,14 @@ function MobileSlideshow() {
 
       <div className="px-5 flex items-baseline justify-between">
         <span className="text-[17px] font-semibold">{current.name}</span>
-        <span className="text-xs tracking-widest text-[#a1a1aa] tabular-nums">
+        <span className="text-xs tracking-widest text-muted tabular-nums">
           {String(index + 1).padStart(2, '0')} / {projects.length}
         </span>
       </div>
 
       {/* Fills up while the current render is showing; key restarts it for each render */}
-      <div className="mx-5 h-[2px] bg-white/15">
-        <div key={index} className="h-full bg-white animate-progress" />
+      <div className="mx-5 h-[2px] bg-black/10">
+        <div key={index} className="h-full bg-ink animate-progress" />
       </div>
     </div>
   );

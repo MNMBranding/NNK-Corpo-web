@@ -6,7 +6,7 @@ export default function LogoGrid() {
   const bottomLogos = getProjectsByStatus('completed').map((project) => project.logo);
 
   return (
-    <section className="bg-main text-white pt-[56px] pb-[72px] md:pt-[80px] md:pb-[120px] relative z-10 overflow-hidden">
+    <section className="bg-surface text-ink pt-[56px] pb-[72px] md:pt-[80px] md:pb-[120px] relative z-10 overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marquee-left {
           0% { transform: translate3d(0, 0, 0); }
@@ -63,7 +63,7 @@ function Logo({ src }: { src: string }) {
           src={src}
           alt="Client Logo"
           fill
-          className="object-contain invert brightness-0 contrast-200"
+          className="object-contain brightness-0"
         />
       </div>
     </div>

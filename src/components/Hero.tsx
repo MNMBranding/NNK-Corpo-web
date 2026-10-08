@@ -56,13 +56,13 @@ export default function Hero() {
     <>
       <div className="relative w-full overflow-hidden">
         <div 
-          className="relative z-0 min-h-[400px] lg:min-h-[84vh] w-full flex items-center justify-center bg-center bg-no-repeat bg-cover"
+          className="relative z-0 aspect-[1600/656] w-full"
         >
           <div 
             className="w-full h-full absolute inset-0"
           >
             <Image 
-              src="/assets/675c3668bf2d6dd9c7580b04_hero.avif"
+              src="/homepage-hero-banner-clean.webp"
               alt="Hero Architecture"
               fill
               priority
@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 bg-main text-white pt-[60px] pb-[60px] md:pt-[120px] md:pb-[66px] text-[length:min(16vw,282px)] font-semibold leading-tight whitespace-nowrap overflow-hidden tracking-[-1px]">
+      <div className="relative z-10 bg-surface text-ink pt-[60px] pb-[60px] md:pt-[120px] md:pb-[66px] text-[length:min(16vw,282px)] font-semibold leading-tight whitespace-nowrap overflow-hidden tracking-[-1px]">
         <div 
           ref={marqueeRef}
           className="flex w-fit will-change-transform"

@@ -62,14 +62,14 @@ export default function ProjectSpecs({ project }: { project: Project }) {
   const lastIsSpanning = cards.length % 2 === 1;
 
   return (
-    <section className="bg-main text-white py-[80px] md:py-[120px] px-5 md:px-[3%]">
+    <section className="bg-surface text-ink py-[80px] md:py-[120px] px-5 md:px-[3%]">
       <div className="max-w-[1760px] mx-auto w-full">
         <div className="mb-12 md:mb-16">
           <span className="uppercase text-sm tracking-wide opacity-80 block mb-4">
             Project Overview
           </span>
-          <h2 className="text-[9vw] md:text-[length:min(3.5vw,62px)] leading-[1.05] font-medium tracking-tight max-w-3xl">
-            Everything you need to know, <span className="text-[#a1a1aa]">at a glance</span>.
+          <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.05] font-medium tracking-tight max-w-3xl">
+            Everything you need to know, <span className="text-muted">at a glance</span>.
           </h2>
         </div>
 
@@ -77,7 +77,7 @@ export default function ProjectSpecs({ project }: { project: Project }) {
           {cards.map((card, idx) => (
             <div
               key={card.key}
-              className={`bg-third rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center ${
+              className={`bg-surface-2 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center ${
                 lastIsSpanning && idx === cards.length - 1 ? 'col-span-2' : card.wide ? 'col-span-2 md:col-span-1' : ''
               }`}
             >

@@ -72,7 +72,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-main text-white py-[72px] md:py-[140px] lg:py-[200px] overflow-hidden">
+    <section className="bg-surface text-ink py-[72px] md:py-[140px] lg:py-[200px] overflow-hidden">
       <div className="max-w-[1760px] mx-auto w-full px-5 md:px-[3%] mb-10 md:mb-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-y-0">
           <div className="md:col-start-1 md:col-end-3 pt-2">
@@ -81,7 +81,7 @@ export default function Testimonials() {
             </span>
           </div>
           <div className="md:col-start-4 md:col-end-10">
-            <h2 className="text-[8vw] md:text-[length:min(3vw,53px)] leading-[1.15] font-medium tracking-tight">
+            <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.15] font-medium tracking-tight">
               Discover the impact we've made for our clients.
             </h2>
           </div>
@@ -89,16 +89,16 @@ export default function Testimonials() {
             <button 
               onClick={() => scrollByOneCard(-1)}
               aria-label="Previous testimonial"
-              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors"
+              className="w-[60px] h-[60px] bg-surface-2 hover:bg-[#e4e4e7] pointer-coarse:bg-[#e4e4e7] max-md:bg-[#e4e4e7] flex items-center justify-center transition-colors"
             >
-              <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} />
+              <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} className="invert" />
             </button>
             <button 
               onClick={() => scrollByOneCard(1)}
               aria-label="Next testimonial"
-              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors"
+              className="w-[60px] h-[60px] bg-surface-2 hover:bg-[#e4e4e7] pointer-coarse:bg-[#e4e4e7] max-md:bg-[#e4e4e7] flex items-center justify-center transition-colors"
             >
-              <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} />
+              <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} className="invert" />
             </button>
           </div>
         </div>
@@ -130,16 +130,16 @@ export default function Testimonials() {
                   className="object-cover object-top"
                 />
               </div>
-              <div className="flex-1 md:flex-none md:w-[400px] md:h-[450px] bg-[#141414] p-6 md:p-12 flex flex-col justify-between transition-colors duration-300 hover:bg-[#1a1a1a]">
+              <div className="flex-1 md:flex-none md:w-[400px] md:h-[450px] bg-surface-2 p-6 md:p-12 flex flex-col justify-between transition-colors duration-300 hover:bg-[#e4e4e7]">
                 <div>
-                  <Image src={item.logo} alt="Logo" width={100} height={40} draggable={false} className="mb-6 md:mb-8 invert" />
+                  <Image src={item.logo} alt="Logo" width={100} height={40} draggable={false} className="mb-6 md:mb-8" />
                   <p className="text-lg md:text-2xl font-medium leading-snug">
                     {item.quote}
                   </p>
                 </div>
                 <div>
                   <p className="text-sm uppercase tracking-wide opacity-80 mt-6 md:mt-8">
-                    {item.name}, <span className="text-white opacity-100 font-semibold">{item.title}</span>
+                    {item.name}, <span className="text-ink opacity-100 font-semibold">{item.title}</span>
                   </p>
                 </div>
               </div>

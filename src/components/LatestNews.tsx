@@ -12,7 +12,7 @@ const news = newsPosts.map((post) => ({
 
 export default function LatestNews() {
   return (
-    <section className="bg-third text-white py-[72px] md:py-[140px] lg:py-[200px] overflow-hidden px-5 md:px-[3%]">
+    <section className="bg-surface-2 text-ink py-[72px] md:py-[140px] lg:py-[200px] overflow-hidden px-5 md:px-[3%]">
       <div className="max-w-[1760px] mx-auto w-full relative">
         {/* Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-y-0 mb-16 md:mb-32">
@@ -22,7 +22,7 @@ export default function LatestNews() {
             </span>
           </div>
           <div className="md:col-start-5 md:col-end-12">
-            <h2 className="text-[10vw] md:text-[length:min(5vw,88px)] leading-[1.1] font-medium tracking-tight">
+            <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.1] font-medium tracking-tight">
               Stories That Inspire Every Project 
             </h2>
           </div>
@@ -41,18 +41,18 @@ export default function LatestNews() {
                 />
                 
                 {/* Arrow Icon */}
-                <div className="absolute top-0 right-0 w-12 h-12 bg-main flex items-center justify-center transition-transform duration-300 z-10">
-                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={20} className="-rotate-45" />
+                <div className="absolute top-0 right-0 w-12 h-12 bg-surface flex items-center justify-center transition-transform duration-300 z-10">
+                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={20} className="-rotate-45 invert" />
                 </div>
               </div>
 
               <div className="flex items-center gap-4 mb-4 uppercase text-xs tracking-wide opacity-80">
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/675c1d31c59bdbc0d9795e87_data-light.svg" alt="Date" width={16} height={16} className="" />
+                  <Image src="/assets/675c1d31c59bdbc0d9795e87_data-light.svg" alt="Date" width={16} height={16} className="invert" />
                   <span>{item.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/675c1d31c59bdbc0d9795e8b_time-light.svg" alt="Time" width={16} height={16} className="" />
+                  <Image src="/assets/675c1d31c59bdbc0d9795e8b_time-light.svg" alt="Time" width={16} height={16} className="invert" />
                   <span>{item.readTime} min read</span>
                 </div>
               </div>

@@ -18,7 +18,7 @@ export default function NotFound() {
         <span className="text-white text-[15vw] md:text-[length:min(7vw,123px)] leading-none font-semibold tracking-tight">
           404
         </span>
-        <h1 className="text-white text-[9vw] md:text-[length:min(4vw,70px)] leading-tight font-medium tracking-tight mt-2 mb-6">
+        <h1 className="text-white text-[9vw] md:text-[length:min(3.6vw,60px)] leading-tight font-medium tracking-tight mt-2 mb-6">
           Page Not Found
         </h1>
         <p className="uppercase text-sm md:text-[15px] tracking-wide text-[#a1a1aa] mb-10">
@@ -27,7 +27,7 @@ export default function NotFound() {
 
         <Link
           href="/"
-          className="group relative overflow-hidden inline-flex items-center justify-center bg-white text-main rounded-[100px] py-[16px] px-[32px] uppercase font-medium text-[13px] hover:text-white pointer-coarse:text-white max-md:text-white transition-colors duration-300 w-fit"
+          className="group relative overflow-hidden inline-flex items-center justify-center bg-white text-ink rounded-[100px] py-[16px] px-[32px] uppercase font-medium text-[13px] hover:text-white pointer-coarse:text-white max-md:text-white transition-colors duration-300 w-fit"
         >
           <span className="relative z-10">Go to Home Page</span>
           <div className="absolute inset-0 bg-[#111111] rounded-full translate-y-[103%] group-hover:translate-y-0 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />

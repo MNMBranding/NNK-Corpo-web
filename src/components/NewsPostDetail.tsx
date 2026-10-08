@@ -7,7 +7,7 @@ import { NewsPost } from '../data/news';
 export default function NewsPostDetail({ post }: { post: NewsPost }) {
   return (
     <>
-      <div className="min-h-screen bg-main text-white relative z-10">
+      <div className="min-h-screen bg-surface text-ink relative z-10">
         <Navbar />
 
         <div className="relative w-full h-[50dvh] md:h-[80dvh]">
@@ -28,7 +28,7 @@ export default function NewsPostDetail({ post }: { post: NewsPost }) {
                 <span className="uppercase text-sm tracking-wide opacity-80">{post.date}</span>
               </div>
               <div className="md:col-start-5 md:col-end-12">
-                <h1 className="text-[9vw] md:text-[length:min(3.7vw,65px)] leading-[1.05] font-medium tracking-tight">
+                <h1 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.05] font-medium tracking-tight">
                   {post.title}
                 </h1>
               </div>

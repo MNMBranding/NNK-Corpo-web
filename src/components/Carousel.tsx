@@ -44,23 +44,23 @@ export default function Carousel({
           <span className="uppercase text-sm tracking-wide opacity-80">{label}</span>
         </div>
         <div className="md:col-start-4 md:col-end-11">
-          <h2 className="text-[10vw] md:text-[length:min(5vw,88px)] leading-[1.1] font-medium tracking-tight">{heading}</h2>
+          <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.1] font-medium tracking-tight">{heading}</h2>
         </div>
         {images.length > 1 && (
           <div className="md:col-start-11 md:col-end-13 flex justify-end items-end gap-[2px] mt-6 md:mt-0">
             <button
               onClick={() => scrollByOneSlide(-1)}
               aria-label="Previous"
-              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors"
+              className="w-[60px] h-[60px] bg-surface-2 hover:bg-[#e4e4e7] pointer-coarse:bg-[#e4e4e7] max-md:bg-[#e4e4e7] flex items-center justify-center transition-colors"
             >
-              <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} />
+              <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} className="invert" />
             </button>
             <button
               onClick={() => scrollByOneSlide(1)}
               aria-label="Next"
-              className="w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors"
+              className="w-[60px] h-[60px] bg-surface-2 hover:bg-[#e4e4e7] pointer-coarse:bg-[#e4e4e7] max-md:bg-[#e4e4e7] flex items-center justify-center transition-colors"
             >
-              <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} />
+              <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} className="invert" />
             </button>
           </div>
         )}
@@ -75,7 +75,7 @@ export default function Carousel({
           <div
             key={`${src}-${idx}`}
             onClick={lightbox ? () => setLightboxIndex(idx) : undefined}
-            className={`relative flex flex-col flex-none snap-center shrink-0 first:ml-auto last:mr-auto bg-[#0c0c0c] overflow-hidden ${slideClassName} ${lightbox ? 'cursor-zoom-in' : ''}`}
+            className={`relative flex flex-col flex-none snap-center shrink-0 first:ml-auto last:mr-auto bg-surface-2 overflow-hidden ${slideClassName} ${lightbox ? 'cursor-zoom-in' : ''}`}
           >
             <div className="relative flex-1 min-h-0">
               <Image
@@ -94,7 +94,7 @@ export default function Carousel({
             )}
 
             {captions && captions[idx] && (
-              <div className="border-t border-white/10 text-white text-xs md:text-sm px-4 md:px-6 py-3 md:py-4 leading-snug">
+              <div className="border-t border-black/10 text-ink text-xs md:text-sm px-4 md:px-6 py-3 md:py-4 leading-snug">
                 {captions[idx]}
               </div>
             )}

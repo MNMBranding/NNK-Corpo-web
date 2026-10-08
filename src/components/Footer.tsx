@@ -43,38 +43,35 @@ export default function Footer() {
       {/* On desktop the footer stays fixed behind the page content; on mobile it is taller than the screen, so it scrolls normally */}
       <footer 
         ref={footerRef}
-        className="relative md:fixed md:bottom-0 md:left-0 w-full bg-[#111111] text-white pt-[60px] pb-[30px] px-5 md:px-[3%] z-0 border-t border-white/10"
+        className="relative md:fixed md:bottom-0 md:left-0 w-full bg-surface-2 text-ink pt-[60px] pb-[30px] px-5 md:px-[3%] z-0 border-t border-black/10"
       >
         <div className="max-w-[1760px] mx-auto w-full">
         
         {/* Top Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
           <div>
-            <h2 className="text-[12vw] md:text-[length:min(6vw,106px)] leading-[1] font-medium tracking-tight">
-              Connect
-            </h2>
-            <h2 className="text-[12vw] md:text-[length:min(6vw,106px)] leading-[1] font-medium tracking-tight text-[#a1a1aa]">
-              With Us
+            <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1] font-medium tracking-tight">
+              Connect <span className="text-muted">With Us</span>
             </h2>
           </div>
           <BorderButton href="/contact" text="Contact" />
         </div>
         
         {/* Main Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8 pt-8 border-t border-white/10 pb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8 pt-8 border-t border-black/10 pb-8">
           {/* Col 1 */}
           <div className="col-span-2 md:col-span-1 flex flex-col gap-6">
             <Link href="/" className="relative block w-[130px] h-12">
               <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="object-contain object-left"/>
             </Link>
-            <p className="text-[#a1a1aa] text-sm max-w-[200px]">
+            <p className="text-muted text-base max-w-[220px]">
               Experience Bliss Everyday
             </p>
           </div>
 
           {/* Col 2 */}
           <div className="flex flex-col gap-4">
-            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] mb-2 font-semibold">Quick Links</h3>
+            <h3 className="uppercase text-[13px] tracking-widest text-ink mb-2 font-semibold">Quick Links</h3>
             <FooterLink href="/" text="Home" />
             <FooterLink href="/projects" text="Projects" />
             <FooterLink href="/blogs" text="Blogs" />
@@ -84,21 +81,21 @@ export default function Footer() {
           {/* Col 3 */}
           <div className="col-span-2 md:col-span-1 max-md:order-last flex flex-col gap-8">
             <div className="flex flex-col gap-3">
-              <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Reach Us</h3>
-              <p className="text-sm leading-relaxed max-w-[240px]">
+              <h3 className="uppercase text-[13px] tracking-widest text-ink font-semibold">Reach Us</h3>
+              <p className="text-base leading-relaxed max-w-[280px]">
                 H.No. 8-1-297/SN/224, Sakkubai Nagar, Shaikpet, Hyderabad - 500008
               </p>
-              <a href="tel:+919092290933" className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+              <a href="tel:+919092290933" className="text-base hover:text-muted transition-colors w-fit">
                 Mobile: +91 90922 90933
               </a>
-              <a href="mailto:sales@nnk.co.in" className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+              <a href="mailto:sales@nnk.co.in" className="text-base hover:text-muted transition-colors w-fit">
                 E-mail: sales@nnk.co.in
               </a>
             </div>
 
             <div className="flex flex-col gap-3">
-              <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Careers &amp; General Enquiries</h3>
-              <a href="mailto:hello@nnk.co.in" className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+              <h3 className="uppercase text-[13px] tracking-widest text-ink font-semibold">Careers &amp; General Enquiries</h3>
+              <a href="mailto:hello@nnk.co.in" className="text-base hover:text-muted transition-colors w-fit">
                 E-mail: hello@nnk.co.in
               </a>
             </div>
@@ -106,7 +103,7 @@ export default function Footer() {
 
           {/* Col 4 */}
           <div className="flex flex-col gap-4">
-            <h3 className="uppercase text-xs tracking-widest text-[#a1a1aa] font-semibold">Follow Us</h3>
+            <h3 className="uppercase text-[13px] tracking-widest text-ink font-semibold">Follow Us</h3>
             <div className="grid grid-cols-4 gap-2 max-w-[152px] md:flex md:items-center md:gap-3 md:max-w-none">
               <SocialIcon href="https://www.facebook.com/share/1ENNwFmYnM/?mibextid=wwXIfr" label="Facebook" animationData={facebookAnimation} />
               <SocialIcon href="https://www.instagram.com/nnk.constructions?igsh=aHpraTJtejNjd3R1&utm_source=qr" label="Instagram" animationData={instagramAnimation} />
@@ -117,11 +114,11 @@ export default function Footer() {
         </div>
         
         {/* Bottom Footer */}
-        <div className="flex flex-wrap justify-between items-center gap-4 text-xs text-[#a1a1aa] pt-8 border-t border-white/10">
+        <div className="flex flex-wrap justify-between items-center gap-4 text-sm text-muted pt-8 border-t border-black/10">
           <div>
             Copyright © {new Date().getFullYear()} NNK. All rights reserved.
           </div>
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-white transition-colors uppercase tracking-widest">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-ink hover:text-muted transition-colors uppercase tracking-widest">
             Back to top ↑
           </button>
         </div>
@@ -134,7 +131,7 @@ export default function Footer() {
 
 function FooterLink({ href, text }: { href: string; text: string }) {
   return (
-    <Link href={href} className="text-sm hover:text-[#a1a1aa] transition-colors w-fit">
+    <Link href={href} className="text-base hover:text-muted transition-colors w-fit">
       {text}
     </Link>
   );
@@ -158,7 +155,7 @@ function SocialIcon({ href, label, animationData }: { href: string; label: strin
         animationData={animationData}
         loop
         autoplay={false}
-        className="w-full h-full"
+        className="w-full h-full invert"
       />
     </a>
   );

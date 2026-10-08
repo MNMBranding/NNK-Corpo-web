@@ -6,7 +6,7 @@ import NewsGrid from "../../components/NewsGrid";
 export default function Blogs() {
   return (
     <>
-      <div className="min-h-screen bg-main text-white relative z-10">
+      <div className="min-h-screen bg-surface text-ink relative z-10">
         <Navbar />
         <NewsHero />
         <NewsGrid />

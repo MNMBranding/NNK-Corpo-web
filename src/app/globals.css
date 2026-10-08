@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --main-color: #040404;
+  --main-color: #ffffff;
   --white: #ffffff;
-  --third-color: #141414;
-  --body-text-color: #d9dae2;
+  --third-color: #f4f4f5;
+  --body-text-color: #3f3f46;
   --second-color: #4361ee;
   --divider-color: #d8dfe0;
   
   --background: var(--main-color);
-  --foreground: var(--white);
+  --foreground: #0a0a0a;
 
 }
 
@@ -22,6 +22,12 @@
   --color-body: var(--body-text-color);
   --color-second: var(--second-color);
   --color-divider: var(--divider-color);
+
+  /* light theme (white + grey), rolled out page by page */
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f4f5;
+  --color-ink: #0a0a0a;
+  --color-muted: #71717a;
   
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;

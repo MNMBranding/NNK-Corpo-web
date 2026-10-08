@@ -37,7 +37,7 @@ export default function ConstructionUpdates({
             {isOngoing ? 'Under Construction' : 'Completed & Delivered'}
           </span>
         </div>
-        <h2 className="text-white text-[8vw] md:text-[length:min(3.2vw,56px)] font-medium tracking-tight max-w-2xl leading-[1.2]">
+        <h2 className="text-white text-[9vw] md:text-[length:min(3.6vw,60px)] font-medium tracking-tight max-w-2xl leading-[1.2]">
           {isOngoing
             ? 'Actively under construction — reach out for the latest on-site progress.'
             : 'Construction complete. Residents have moved in.'}
