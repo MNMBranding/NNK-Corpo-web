@@ -7,11 +7,11 @@ export default function ProjectHero({ project }: { project: Project }) {
       <Image
         src={project.image}
         alt={project.name}
-        width={1920}
-        height={1080}
+        fill
         priority
         sizes="100vw"
-        className="w-full h-auto md:absolute md:inset-0 md:h-full md:object-cover md:object-center"
+        // Fills the section on desktop; on mobile it drops back into the flow at its natural shape
+        className="object-cover object-center max-md:!static max-md:!h-auto"
       />
       <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />
 

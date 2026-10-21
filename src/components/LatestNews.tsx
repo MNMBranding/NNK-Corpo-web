@@ -42,7 +42,7 @@ export default function LatestNews() {
                 
                 {/* Arrow Icon */}
                 <div className="absolute top-0 right-0 w-12 h-12 bg-surface flex items-center justify-center transition-transform duration-300 z-10">
-                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={20} className="-rotate-45 invert" />
+                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={17} className="-rotate-45 invert" />
                 </div>
               </div>
 

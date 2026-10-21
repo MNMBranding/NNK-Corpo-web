@@ -32,7 +32,7 @@ export default function ProjectSpecs({ project }: { project: Project }) {
               <>
                 <p className="uppercase text-xs tracking-widest opacity-60 mb-4">TS RERA</p>
                 <div className="flex items-center justify-center gap-3">
-                  <Image src="/assets/badges/ts-rera.png" alt="TS RERA" width={34} height={34} className="shrink-0 rounded-sm" />
+                  <Image src="/assets/badges/ts-rera.png" alt="TS RERA" width={34} height={15} className="shrink-0 rounded-sm" />
                   <h3 className="text-base sm:text-lg md:text-xl font-medium tracking-tight leading-tight [overflow-wrap:anywhere]">{rera}</h3>
                 </div>
               </>
@@ -49,7 +49,7 @@ export default function ProjectSpecs({ project }: { project: Project }) {
               <>
                 <p className="uppercase text-xs tracking-widest opacity-60 mb-4">{approvalAuthority || 'Approval'} No.</p>
                 <div className="flex items-center justify-center gap-3">
-                  <Image src="/assets/badges/ghmc.png" alt={approvalAuthority || 'Approval'} width={34} height={34} className="shrink-0 rounded-sm" />
+                  <Image src="/assets/badges/ghmc.png" alt={approvalAuthority || 'Approval'} width={34} height={20} className="shrink-0 rounded-sm" />
                   <h3 className="text-base sm:text-lg md:text-xl font-medium tracking-tight leading-tight [overflow-wrap:anywhere]">{approvalNumber}</h3>
                 </div>
               </>

@@ -9,7 +9,8 @@ export default function Navbar() {
 
   return (
     <nav className="w-full z-50 relative bg-surface">
-      <div className="grid grid-cols-2 lg:grid-cols-[1fr_0.7fr_1fr_1fr_auto] gap-10 px-5 lg:px-[3%] pt-[30px] pb-[30px] items-center lg:items-start">
+      {/* Columns match the hero below: logo over the headline, links over the banner + panel */}
+      <div className="max-w-[1760px] mx-auto grid grid-cols-2 lg:grid-cols-[minmax(0,12%)_minmax(0,1fr)] px-5 md:px-[3%] py-[30px] items-center">
         {/* Column 1: Logo */}
         <Link href="/" className="relative z-50 block w-[110px] h-10">
           <Image src="/nnk-logo-1.png" alt="NNK LOGO" fill className="object-contain object-left"/>
@@ -28,21 +29,10 @@ export default function Navbar() {
           </div>
         </button>
 
-        {/* Column 2: Subhead (Hidden on mobile) */}
-        <div className="hidden lg:block">
-          <p className="uppercase text-ink text-[13px] font-medium opacity-80 leading-tight">
-            A Blissful Experience<br />Enriching Everyday<br />
-          </p>
-        </div>
-
-        {/* Column 3: Nav Menu (Desktop) */}
-        <div className="hidden lg:flex flex-col gap-[2px]">
+        {/* Column 2: Nav links on one line, grouped on the right (Desktop) */}
+        <div className="hidden lg:flex items-center justify-end gap-[min(4.5vw,72px)]">
           <NavLink href="/" text="Home" />
           <NavLink href="/projects" text="Projects" />
-        </div>
-
-        {/* Column 4: Right Menu (Desktop) */}
-        <div className="hidden lg:flex flex-col gap-[2px]">
           <NavLink href="/contact" text="Contact"/>
           <NavLink href="/blogs" text="Blogs" />
         </div>
@@ -62,7 +52,7 @@ export default function Navbar() {
         <div className="mt-auto pb-10 flex flex-wrap gap-x-6 gap-y-2 text-[15px] opacity-70">
           <a href="https://www.facebook.com/share/1ENNwFmYnM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="https://www.instagram.com/nnk.constructions?igsh=aHpraTJtejNjd3R1&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.youtube.com/@nnkconstructions" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.youtube.com/@nnk.constructions" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://www.linkedin.com/company/nnk-constructions" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
@@ -78,11 +68,11 @@ function NavLink({ href, text, count }: { href: string; text: string; count?: nu
           src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" 
           alt="arrow" 
           width={12} 
-          height={12} 
+          height={10} 
           className="invert"
         />
       </div>
-      <span className="uppercase text-[13px] font-medium tracking-wide whitespace-nowrap">
+      <span className="uppercase text-[16px] font-medium tracking-wide whitespace-nowrap">
         {text} {count !== undefined && <span className="opacity-70 ml-1">{count}</span>}
       </span>
     </Link>

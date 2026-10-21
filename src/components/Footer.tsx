@@ -107,7 +107,7 @@ export default function Footer() {
             <div className="grid grid-cols-4 gap-2 max-w-[152px] md:flex md:items-center md:gap-3 md:max-w-none">
               <SocialIcon href="https://www.facebook.com/share/1ENNwFmYnM/?mibextid=wwXIfr" label="Facebook" animationData={facebookAnimation} />
               <SocialIcon href="https://www.instagram.com/nnk.constructions?igsh=aHpraTJtejNjd3R1&utm_source=qr" label="Instagram" animationData={instagramAnimation} />
-              <SocialIcon href="https://www.youtube.com/@nnkconstructions" label="YouTube" animationData={youtubeAnimation} />
+              <SocialIcon href="https://www.youtube.com/@nnk.constructions" label="YouTube" animationData={youtubeAnimation} />
               <SocialIcon href="https://www.linkedin.com/company/nnk-constructions" label="LinkedIn" animationData={linkedinAnimation} />
             </div>
           </div>

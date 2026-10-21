@@ -34,10 +34,16 @@
 
   --animate-marquee: marquee 10s linear infinite;
   --animate-progress: progress 3.5s linear forwards;
+  --animate-progress-y: progress-y 3.5s linear forwards;
 
   @keyframes progress {
     from { width: 0%; }
     to { width: 100%; }
+  }
+
+  @keyframes progress-y {
+    from { height: 0%; }
+    to { height: 100%; }
   }
 
   @keyframes marquee {

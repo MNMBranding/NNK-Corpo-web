@@ -20,7 +20,7 @@ function Meta({ date, readTime }: { date: string; readTime: string }) {
 function ArrowBadge() {
   return (
     <div className="absolute top-4 right-4 w-11 h-11 bg-surface flex items-center justify-center opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 pointer-coarse:opacity-100 max-md:opacity-100 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-all duration-300 z-10">
-      <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={18} height={18} className="-rotate-45 invert" />
+      <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={18} height={15} className="-rotate-45 invert" />
     </div>
   );
 }
