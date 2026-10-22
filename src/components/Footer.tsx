@@ -73,6 +73,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="uppercase text-[13px] tracking-widest text-ink mb-2 font-semibold">Quick Links</h3>
             <FooterLink href="/" text="Home" />
+            <FooterLink href="/about" text="About" />
             <FooterLink href="/projects" text="Projects" />
             <FooterLink href="/blogs" text="Blogs" />
             <FooterLink href="/contact" text="Contact" />

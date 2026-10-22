@@ -32,6 +32,7 @@ export default function Navbar() {
         {/* Column 2: Nav links on one line, grouped on the right (Desktop) */}
         <div className="hidden lg:flex items-center justify-end gap-[min(4.5vw,72px)]">
           <NavLink href="/" text="Home" />
+          <NavLink href="/about" text="About" />
           <NavLink href="/projects" text="Projects" />
           <NavLink href="/contact" text="Contact"/>
           <NavLink href="/blogs" text="Blogs" />
@@ -44,6 +45,7 @@ export default function Navbar() {
       >
         <div className="flex flex-col gap-6 text-[32px] font-medium tracking-tight mt-10">
           <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
           <Link href="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
           <Link href="/blogs" onClick={() => setIsOpen(false)}>Blogs</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>

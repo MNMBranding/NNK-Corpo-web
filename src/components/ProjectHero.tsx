@@ -19,6 +19,11 @@ export default function ProjectHero({ project }: { project: Project }) {
         <span className="uppercase text-sm tracking-wide opacity-80 block mb-4">
           {project.status === 'ongoing' ? 'Ongoing Project' : 'Completed Project'}
         </span>
+        {project.specs.rera && (
+          <span className="uppercase text-sm tracking-wide opacity-80 block mb-2">
+            TS RERA: {project.specs.rera}
+          </span>
+        )}
         <h1 className="text-[14vw] md:text-[length:min(8vw,120px)] leading-[1.1] font-medium tracking-tight mb-6">
           {project.name}
         </h1>

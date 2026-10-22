@@ -9,59 +9,40 @@ export default function HeroSecond() {
 
   useEffect(() => {
     let ticking = false;
-    let isVisible = false;
-
-    const observer = new IntersectionObserver((entries) => {
-      isVisible = entries[0].isIntersecting;
-    });
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    let initialTop = 0;
-    if (containerRef.current) {
-      initialTop = containerRef.current.offsetTop;
-      // Get the absolute top relative to document by traversing offsetParents
-      let el: HTMLElement | null = containerRef.current;
-      while (el.offsetParent) {
-        el = el.offsetParent as HTMLElement;
-        initialTop += el.offsetTop;
-      }
-    }
 
     const updateParallax = () => {
-      if (!containerRef.current || !imageRef.current || !isVisible) {
-        ticking = false;
-        return;
-      }
-      
-      const scrollY = window.scrollY;
-      const viewportCenter = scrollY + window.innerHeight / 2;
-      const elementHeight = containerRef.current.offsetHeight;
-      const elementCenter = initialTop + elementHeight / 2;
-      
-      const distanceFromCenter = viewportCenter - elementCenter;
-      
-      // Dialed back to 0.4 so the image doesn't fly out of bounds completely
-      const offset = distanceFromCenter * 0.4;
-      imageRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
       ticking = false;
+      if (!containerRef.current || !imageRef.current) return;
+
+      // Measure live every frame so layout shifts above (images, fonts) can't make it jump
+      const rect = containerRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      if (rect.bottom < 0 || rect.top > viewportHeight) return;
+
+      // -1 when the box is just entering from below, 1 when it is just leaving at the top
+      const travel = (viewportHeight + rect.height) / 2;
+      const progress = (viewportHeight / 2 - (rect.top + rect.height / 2)) / travel;
+      const clamped = Math.max(-1, Math.min(1, progress));
+
+      // The image is 180% tall with 40% overhang on each side, so stay inside that
+      const offset = clamped * rect.height * 0.38;
+      imageRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
     };
 
-    const handleScroll = () => {
-      if (!ticking && isVisible) {
+    const requestUpdate = () => {
+      if (!ticking) {
         window.requestAnimationFrame(updateParallax);
         ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
     updateParallax(); // Initial positioning
-    
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
+      window.removeEventListener('scroll', requestUpdate);
+      window.removeEventListener('resize', requestUpdate);
     };
   }, []);
 

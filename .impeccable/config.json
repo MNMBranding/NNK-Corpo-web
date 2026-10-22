@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/components/AboutPortfolio.tsx"
+        ],
+        "createdAt": "2026-10-22T11:05:47.958Z",
+        "reason": "user confirmed: client wants the Project Portfolio block exactly like their Doyen reference image, whose heading has this vertical bar; it's a heading rule, not a card accent"
+      }
+    ]
+  }
+}

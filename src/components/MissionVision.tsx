@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 const stats = [
-  { value: 20, prefix: '', suffix: ' Lakh Sft.', label: 'Developed' },
-  { value: 30, prefix: '', suffix: ' Projects', label: 'Delivered' },
-  { value: 400, prefix: '', suffix: '', label: 'Acres in the Pipeline' },
-  { value: 2000, prefix: '', suffix: '+', label: 'Happy Families' },
+  { value: 20, prefix: '', suffix: ' Lakhs Sq\u00a0Ft.', label: 'Developed' },
+  { value: 7, prefix: '', suffix: ' Lakhs+ Sq\u00a0Ft.', label: 'Ongoing' },
+  { value: 42, prefix: '', suffix: ' Projects', label: 'Completed' },
+  { value: 100, prefix: '', suffix: ' Acres Plotting', label: 'Completed' },
+  { value: 47, prefix: '', suffix: '+ Acres Plotting', label: 'Ongoing' },
+  { value: 2000, prefix: '', suffix: '+', label: 'Happy Customers' },
 ];
 
 export default function MissionVision() {
@@ -29,25 +31,33 @@ export default function MissionVision() {
               {" "} creates iconic spaces through expertise, innovation, and excellence, delivering trusted, thoughtfully designed landmarks that inspire modern living and lasting value.            </h2>
           </div>
 
-          <div className="md:col-start-2 md:col-end-13 grid grid-cols-2 md:grid-cols-4 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-0 md:pt-10">
-            {stats.map((stat, idx) => (
-              <div key={idx}>
-                <Counter
-                  value={stat.value}
-                  prefix={stat.prefix}
-                  suffix={stat.suffix}
-                  className="text-[7vw] md:text-[length:min(3.2vw,56px)] leading-[1] font-medium tracking-tighter"
-                />
-                <p className="uppercase text-sm tracking-wide mt-2 opacity-80">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+          <div className="md:col-start-2 md:col-end-13 md:pt-10">
+            <StatsGrid />
           </div>
 
         </div>
       </div>
     </section>
+  );
+}
+
+function StatsGrid() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-16">
+      {stats.map((stat, idx) => (
+        <div key={idx}>
+          <Counter
+            value={stat.value}
+            prefix={stat.prefix}
+            suffix={stat.suffix}
+            className="text-[7vw] md:text-[length:min(2.8vw,49px)] leading-[1.05] font-medium tracking-tighter"
+          />
+          <p className="uppercase text-sm tracking-wide mt-2 opacity-80">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
   );
 }
 

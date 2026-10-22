@@ -33,6 +33,8 @@ export interface Project {
   floorPlans: FloorPlanItem[];
   masterPlan?: string;
   nearbyLocations?: NearbyCategory[];
+  // PDF in public/brochures/, e.g. '/brochures/aira.pdf'. Offered on the contact form once set.
+  brochure?: string;
 }
 
 // Sourced from nnk.co.in / aira.nnk.co.in (project pages) on 2026-08-11.
@@ -115,7 +117,7 @@ export const projects: Project[] = [
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/aravali.jpg',
     logo: '/assets/projects/logos/aravali.svg',
-    status: 'ongoing',
+    status: 'completed',
     specs: { floors: 'Stilt + 4', bhk: '2 BHK', builtUp: '9,360 sq ft', plotArea: '348 sq yards', approvalAuthority: 'GHMC', approvalNumber: '4803/GHMC/KHB/2025-BP' },
     address: 'Plot No 102, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
     gallery: galleryFor('aravali', 1),
@@ -152,7 +154,7 @@ export const projects: Project[] = [
     tagline: 'Luxurious 2 & 3 BHK Flats for Sale in Hyderabad',
     image: '/assets/projects/aarna.jpg',
     logo: '/assets/projects/logos/aarna.png',
-    status: 'ongoing',
+    status: 'completed',
     specs: { floors: 'Cellar + Stilt + 5', bhk: '2 & 3 BHK', builtUp: '41,025 sq ft', plotArea: '2,046 sq yards', rera: 'P02500008386', approvalAuthority: 'GHMC', approvalNumber: '6041/GHMC/KHB/2024-BP' },
     address: 'Sy No 128 & 129, Ibrahimbagh, Next to Neknampur Lake, Narsingi, Hyderabad – 500 075',
     gallery: galleryFor('aarna', 2),
@@ -165,7 +167,7 @@ export const projects: Project[] = [
     tagline: 'Luxurious 2 & 3 BHK Flats',
     image: '/assets/projects/varnam.jpg',
     logo: '/assets/projects/logos/varnam.png',
-    status: 'ongoing',
+    status: 'completed',
     specs: { floors: 'Stilt + 5', bhk: '2 BHK (1260 sft) & 3 BHK (1590 sft)', builtUp: '14,250 sq ft', plotArea: '480 sq yards', rera: 'P02500009104', approvalAuthority: 'GHMC', approvalNumber: '3034/GHMC/KHB/2024-BP' },
     address: 'Plot No 239 & 240, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
     gallery: galleryFor('varnam', 2),
@@ -178,7 +180,7 @@ export const projects: Project[] = [
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/sia.jpg',
     logo: '/assets/projects/logos/sia.svg',
-    status: 'ongoing',
+    status: 'completed',
     specs: { floors: 'Stilt + 5', bhk: '2 BHK', builtUp: '10,400 sq ft', plotArea: '385 sq yards', rera: 'P02500009438', approvalAuthority: 'GHMC', approvalNumber: '6233/GHMC/KHB/2025-BP' },
     address: 'Plot No 136 & 137, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
     gallery: galleryFor('sia', 1),
@@ -204,7 +206,7 @@ export const projects: Project[] = [
     tagline: 'Luxurious 2 & 3 BHK Flats for Sale in Hyderabad',
     image: '/assets/projects/madhumani-vilas.jpg',
     logo: '/assets/projects/logos/madhumani-vilas.png',
-    status: 'ongoing',
+    status: 'completed',
     specs: { floors: 'Stilt + 5', bhk: '2 & 3 BHK', builtUp: '17,500 sq ft', plotArea: '692.76 sq yards', rera: 'P02500008626', approvalAuthority: 'GHMC', approvalNumber: '1996/GHMC/KHB/2024-BP' },
     address: 'H.No. 8-1-297/SN/224, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
     gallery: galleryFor('madhumani-vilas', 4),

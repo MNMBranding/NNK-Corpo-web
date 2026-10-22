@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
+import { projects } from '../data/projects';
 
-const options = ['Site Visit', 'Brochure Download', 'General Enquiry'];
+const GENERAL = 'General Enquiry';
+const options = [...projects.map((p) => p.name), GENERAL];
 
 /**
  * Dropdown built from page elements instead of a native <select>: the browser draws a
@@ -16,6 +18,8 @@ export default function InterestSelect({ id, className }: { id: string; classNam
   const rootRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const hiddenRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const brochure = projects.find((p) => p.name === value)?.brochure;
 
   // Close when clicking anywhere outside
   useEffect(() => {
@@ -26,6 +30,11 @@ export default function InterestSelect({ id, className }: { id: string; classNam
     document.addEventListener('pointerdown', onPointerDown);
     return () => document.removeEventListener('pointerdown', onPointerDown);
   }, [open]);
+
+  // Keep the keyboard-highlighted option visible in the scrolling list
+  useEffect(() => {
+    if (open) listRef.current?.children[highlighted]?.scrollIntoView({ block: 'nearest' });
+  }, [open, highlighted]);
 
   const choose = (option: string) => {
     setValue(option);
@@ -54,50 +63,63 @@ export default function InterestSelect({ id, className }: { id: string; classNam
   };
 
   return (
-    <div ref={rootRef} className="relative" onKeyDown={onKeyDown}>
-      <button
-        ref={buttonRef}
-        id={id}
-        type="button"
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        onClick={() => (open ? setOpen(false) : openList())}
-        className={`${value ? className : className.replace('text-ink', 'text-black/35')} flex items-center justify-between text-left`}
-      >
-        {value || 'Select'}
-        <svg aria-hidden="true" className={`w-4 h-4 shrink-0 text-muted transition-transform duration-200 ${open ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="m6 9 6 6 6-6" />
-        </svg>
-      </button>
+    <div>
+      <div ref={rootRef} className="relative" onKeyDown={onKeyDown}>
+        <button
+          ref={buttonRef}
+          id={id}
+          type="button"
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          onClick={() => (open ? setOpen(false) : openList())}
+          className={`${value ? className : className.replace('text-ink', 'text-black/35')} flex items-center justify-between text-left`}
+        >
+          {value || 'Select'}
+          <svg aria-hidden="true" className={`w-4 h-4 shrink-0 text-muted transition-transform duration-200 ${open ? 'rotate-180' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
 
-      {/* Carries the value for the form and blocks submitting while it's still "Select" */}
-      <input
-        ref={hiddenRef}
-        tabIndex={-1}
-        aria-hidden="true"
-        name="interest"
-        value={value}
-        required
-        onChange={() => {}}
-        onInvalid={(e) => e.currentTarget.setCustomValidity(value ? '' : 'Please choose an option.')}
-        className="sr-only bottom-0 left-0"
-      />
+        {/* Carries the value for the form and blocks submitting while it's still "Select" */}
+        <input
+          ref={hiddenRef}
+          tabIndex={-1}
+          aria-hidden="true"
+          name="interest"
+          value={value}
+          required
+          onChange={() => {}}
+          onInvalid={(e) => e.currentTarget.setCustomValidity(value ? '' : 'Please choose an option.')}
+          className="sr-only bottom-0 left-0"
+        />
 
-      {open && (
-        <ul role="listbox" aria-labelledby={id} className="absolute left-0 right-0 top-full z-20 mt-2 bg-surface border border-black/10 shadow-[0_12px_32px_rgba(0,0,0,0.08)] py-2">
-          {options.map((option, i) => (
-            <li
-              key={option}
-              role="option"
-              aria-selected={value === option}
-              onMouseEnter={() => setHighlighted(i)}
-              onClick={() => choose(option)}
-              className={`px-4 py-3 text-base text-ink transition-colors ${i === highlighted ? 'bg-surface-2' : ''} ${value === option ? 'font-medium' : ''}`}
-            >
-              {option}
-            </li>
-          ))}
-        </ul>
+        {open && (
+          <ul ref={listRef} role="listbox" aria-labelledby={id} className="absolute left-0 right-0 top-full z-20 mt-2 max-h-72 overflow-y-auto overscroll-contain bg-surface border border-black/10 shadow-[0_12px_32px_rgba(0,0,0,0.08)] py-2">
+            {options.map((option, i) => (
+              <li
+                key={option}
+                role="option"
+                aria-selected={value === option}
+                onMouseEnter={() => setHighlighted(i)}
+                onClick={() => choose(option)}
+                className={`px-4 py-3 text-base text-ink transition-colors ${i === highlighted ? 'bg-surface-2' : ''} ${value === option ? 'font-medium' : ''}`}
+              >
+                {option}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {brochure && (
+        <a
+          href={brochure}
+          download
+          className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-ink underline underline-offset-4 hover:text-muted transition-colors"
+        >
+          Download brochure
+          <span aria-hidden="true">&darr;</span>
+        </a>
       )}
     </div>
   );

@@ -6,12 +6,13 @@ export default function QuoteCTA() {
     <section className="bg-surface-2 pt-[60px] md:pt-[100px] pb-[100px] md:pb-[150px] px-5 md:px-[3%] relative overflow-hidden ml-[1%] mr-[1%] md:mt-[100px] mt-[50px]">
       <div className="relative z-10 max-w-[1760px] mx-auto w-full">
         {/* Map Drawing */}
-        <div className="relative w-full h-[50vh] md:h-[85vh] mb-16 md:mb-24">
+        <div className="relative w-full aspect-[1906/967] mb-16 md:mb-24">
           <Image
-            src="https://cdn.prod.website-files.com/675c1d31c59bdbc0d9795e5c/676018be10d094b388a7bf06_draw.avif"
+            src="/assets/vyoma-line-drawing.webp"
             alt="Architectural Line Drawing"
             fill
-            className="object-cover invert"
+            sizes="(min-width: 1760px) 1760px, 100vw"
+            className="object-contain"
           />
         </div>
 
