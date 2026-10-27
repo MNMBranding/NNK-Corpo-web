@@ -20,7 +20,7 @@ export default function AboutMilestones() {
 
         <div className="md:col-start-4 md:col-end-13">
           <h2 className="text-[9vw] md:text-[length:min(3.6vw,60px)] leading-[1.15] font-medium tracking-tight mb-10 md:mb-16">
-            From 15 flats <span className="text-muted">to 132.</span>
+            From 15 <span className="text-muted">to 132 flats.</span>
           </h2>
 
           <ol className="border-t border-divider">

@@ -1,4 +1,9 @@
+"use client";
+
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import InterestSelect from './InterestSelect';
+import { projects } from '../data/projects';
 
 // Underlined fields: a small label above, a thin line below that darkens on focus
 const inputClass =
@@ -16,6 +21,30 @@ function Field({ label, htmlFor, className = '', children }: { label: string; ht
 }
 
 export default function ContactForm() {
+  const router = useRouter();
+  // idle -> sending (spinner) -> sent (check mark) -> leaving (curtain covers the screen) -> /thank-you
+  const [phase, setPhase] = useState<'idle' | 'sending' | 'sent' | 'leaving'>('idle');
+
+  useEffect(() => {
+    router.prefetch('/thank-you');
+  }, [router]);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (phase !== 'idle') return;
+    // The thank-you page offers the brochure of the project picked in "Interested In"
+    const interest = new FormData(e.currentTarget).get('interest');
+    const slug = projects.find((p) => p.name === interest)?.slug;
+    setPhase('sending');
+    // TODO: send the enquiry to the CRM / email endpoint here (replaces this placeholder wait)
+    await new Promise((r) => setTimeout(r, 900));
+    setPhase('sent');
+    await new Promise((r) => setTimeout(r, 650));
+    setPhase('leaving');
+    await new Promise((r) => setTimeout(r, 750));
+    router.push(slug ? `/thank-you?project=${slug}` : '/thank-you');
+  }
+
   return (
     <section className="bg-surface-2 text-ink py-[72px] md:py-[140px] lg:py-[200px] px-5 md:px-[3%] relative">
       <div className="max-w-[1760px] mx-auto w-full">
@@ -33,7 +62,7 @@ export default function ContactForm() {
               Get your <span className="text-muted">custom quote</span> for innovative architectural solutions.
             </h2>
             
-            <form className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 md:gap-y-12">
+            <form onSubmit={handleSubmit} className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 md:gap-y-12">
               <Field label="Full Name" htmlFor="contact-name">
                 <input id="contact-name" type="text" autoComplete="name" placeholder="John Doe" required className={inputClass} />
               </Field>
@@ -52,10 +81,34 @@ export default function ContactForm() {
               <div className="md:col-span-2 flex justify-end">
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 rounded-full bg-ink text-white h-[56px] px-8 font-medium text-base hover:bg-[#3f3f46] transition-colors duration-300"
+                  disabled={phase !== 'idle'}
+                  aria-live="polite"
+                  className="group relative inline-flex items-center gap-3 rounded-full bg-ink text-white h-[56px] px-8 font-medium text-base hover:bg-[#3f3f46] disabled:hover:bg-ink transition-colors duration-300"
                 >
-                  Get in Touch
-                  <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                  <span className={`transition-opacity duration-300 ${phase === 'idle' ? 'opacity-100' : 'opacity-0'}`}>
+                    Get in Touch
+                  </span>
+                  <span aria-hidden="true" className={`transition-[transform,opacity] duration-300 group-hover:translate-x-1 ${phase === 'idle' ? 'opacity-100' : 'opacity-0'}`}>&rarr;</span>
+
+                  {/* Spinner while sending */}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute inset-0 m-auto size-6 rounded-full border-2 border-white/25 border-t-white animate-spin transition-opacity duration-300 ${phase === 'sending' ? 'opacity-100' : 'opacity-0'}`}
+                  />
+                  {/* Check mark draws in once sent */}
+                  <svg aria-hidden="true" viewBox="0 0 24 24" className="absolute inset-0 m-auto size-7" fill="none">
+                    <path
+                      d="M5 12.5l4.5 4.5L19 7.5"
+                      pathLength={1}
+                      stroke="currentColor"
+                      strokeWidth={2.2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeDasharray={1}
+                      className={`transition-[stroke-dashoffset] duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] ${phase === 'sent' || phase === 'leaving' ? '[stroke-dashoffset:0]' : '[stroke-dashoffset:1]'}`}
+                    />
+                  </svg>
+                  <span className="sr-only">{phase === 'sending' ? 'Sending' : phase === 'idle' ? '' : 'Sent'}</span>
                 </button>
               </div>
             </form>
@@ -64,6 +117,12 @@ export default function ContactForm() {
         </div>
 
       </div>
+
+      {/* Curtain that rises over the page before handing off to /thank-you (which lifts it away) */}
+      <div
+        aria-hidden="true"
+        className={`fixed inset-0 z-[200] bg-ink pointer-events-none transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] motion-reduce:transition-none ${phase === 'leaving' ? 'translate-y-0' : 'translate-y-full'}`}
+      />
     </section>
   );
 }

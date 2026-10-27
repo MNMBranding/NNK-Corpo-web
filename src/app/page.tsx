@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import MissionVision from "../components/MissionVision";
+import ProjectVideos from "../components/ProjectVideos";
 import LogoGrid from "../components/LogoGrid";
 // import Services from "../components/Services"; // hidden for now
 import QuoteCTA from "../components/QuoteCTA";
@@ -16,6 +17,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <MissionVision />
+        <ProjectVideos />
         <LogoGrid />
         {/* <Services /> hidden for now */}
         <QuoteCTA />

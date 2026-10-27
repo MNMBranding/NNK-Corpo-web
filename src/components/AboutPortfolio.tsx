@@ -6,10 +6,10 @@ export default function AboutPortfolio() {
       <div className="max-w-[1760px] mx-auto w-full">
 
         <Image
-          src="/nnk-project-portfolio-map.png"
-          alt="Map of NNK project locations across Hyderabad, from Bachupally and Kukatpally to Kompally, Alwal and Secunderabad"
-          width={1536}
-          height={1024}
+          src="/nnk-project-portfolio-map.webp"
+          alt="Map of Hyderabad marking Sakkubai Nagar, Shaikpet, with a close-up showing the exact locations of all 18 NNK projects"
+          width={3072}
+          height={2048}
           sizes="(min-width: 1760px) 1760px, 100vw"
           className="w-full h-auto"
         />
