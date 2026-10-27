@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import InterestSelect from './InterestSelect';
 import { projects } from '../data/projects';
 
 // Underlined fields: a small label above, a thin line below that darkens on focus
 const inputClass =
   'w-full bg-transparent border-0 border-b border-black/20 rounded-none px-0 pt-2 pb-3 text-lg text-ink placeholder:text-black/35 focus:outline-none focus:border-ink transition-colors';
+
+// A project page's "Enquire Now" links to /contact?project=<slug>, which pre-selects that project
+function PreselectedInterest({ id, className }: { id: string; className: string }) {
+  const initialProject = useSearchParams().get('project');
+  return <InterestSelect id={id} className={className} initialProject={initialProject} />;
+}
 
 function Field({ label, htmlFor, className = '', children }: { label: string; htmlFor: string; className?: string; children: React.ReactNode }) {
   return (
@@ -73,7 +79,10 @@ export default function ContactForm() {
                 <input id="contact-phone" type="tel" autoComplete="tel" placeholder="+91 98765 43210" required className={inputClass} />
               </Field>
               <Field label="Interested In" htmlFor="contact-interest">
-                <InterestSelect id="contact-interest" className={inputClass} />
+                {/* Suspense keeps the page static: the empty dropdown shows until the URL is read */}
+                <Suspense fallback={<InterestSelect id="contact-interest" className={inputClass} />}>
+                  <PreselectedInterest id="contact-interest" className={inputClass} />
+                </Suspense>
               </Field>
               <Field label="Message" htmlFor="contact-message" className="md:col-span-2">
                 <textarea id="contact-message" rows={3} placeholder="Tell us about your project" required className={`${inputClass} resize-y`} />

@@ -11,8 +11,8 @@ const options = [...projects.map((p) => p.name), GENERAL];
  * native select's option list itself, outside the page, so the custom cursor can't cover it.
  * A visually hidden input carries the value and the "required" check for the form.
  */
-export default function InterestSelect({ id, className }: { id: string; className: string }) {
-  const [value, setValue] = useState('');
+export default function InterestSelect({ id, className, initialProject }: { id: string; className: string; initialProject?: string | null }) {
+  const [value, setValue] = useState(() => projects.find((p) => p.slug === initialProject)?.name ?? '');
   const [open, setOpen] = useState(false);
   const [highlighted, setHighlighted] = useState(0);
   const rootRef = useRef<HTMLDivElement>(null);

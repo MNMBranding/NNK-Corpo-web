@@ -114,6 +114,7 @@ export const projects: Project[] = [
   {
     slug: 'aravali',
     name: 'NNK Aravali',
+    brochure: '/brochures/aravali.pdf',
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/aravali.jpg',
     logo: '/assets/projects/logos/aravali.svg',
@@ -127,6 +128,7 @@ export const projects: Project[] = [
   {
     slug: 'vyoma',
     name: 'NNK Vyoma',
+    brochure: '/brochures/vyoma.pdf',
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/vyoma.jpg',
     logo: '/assets/projects/logos/vyoma.png',
@@ -139,6 +141,7 @@ export const projects: Project[] = [
   {
     slug: 'vrindhavan',
     name: 'NNK Vrindhavan',
+    brochure: '/brochures/vrindhavan.pdf',
     tagline: '2 & 3 BHK Residences',
     image: '/assets/projects/vrindhavan.jpeg',
     logo: '/assets/projects/logos/vrindhavan.png',
@@ -164,6 +167,7 @@ export const projects: Project[] = [
   {
     slug: 'varnam',
     name: 'NNK Varnam',
+    brochure: '/brochures/varnam.pdf',
     tagline: 'Luxurious 2 & 3 BHK Flats',
     image: '/assets/projects/varnam.jpg',
     logo: '/assets/projects/logos/varnam.png',
@@ -177,6 +181,7 @@ export const projects: Project[] = [
   {
     slug: 'sia',
     name: 'NNK Sia',
+    brochure: '/brochures/sia.pdf',
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/sia.jpg',
     logo: '/assets/projects/logos/sia.svg',
@@ -190,6 +195,7 @@ export const projects: Project[] = [
   {
     slug: 'vindhya',
     name: 'NNK Vindhya',
+    brochure: '/brochures/vindhya.pdf',
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/vindhya.jpg',
     logo: '/assets/projects/logos/vindhya.svg',
@@ -203,6 +209,7 @@ export const projects: Project[] = [
   {
     slug: 'madhumani-vilas',
     name: 'NNK Madhumani Vilas',
+    brochure: '/brochures/madhumani-vilas.pdf',
     tagline: 'Luxurious 2 & 3 BHK Flats for Sale in Hyderabad',
     image: '/assets/projects/madhumani-vilas.jpg',
     logo: '/assets/projects/logos/madhumani-vilas.png',
@@ -218,6 +225,7 @@ export const projects: Project[] = [
   {
     slug: 'amaya',
     name: 'NNK Amaya',
+    brochure: '/brochures/amaya.pdf',
     tagline: '2.5 & 3 BHK Residences',
     image: '/assets/projects/amaya.jpg',
     logo: '/assets/projects/logos/amaya.svg',
@@ -231,6 +239,7 @@ export const projects: Project[] = [
   {
     slug: 'kavyam',
     name: 'NNK Kavyam',
+    brochure: '/brochures/kavyam.pdf',
     tagline: '2 & 3 BHK Residences',
     image: '/assets/projects/kavyam.webp',
     logo: '/assets/projects/logos/kavyam.svg',
@@ -244,6 +253,7 @@ export const projects: Project[] = [
   {
     slug: 'kiara',
     name: 'NNK Kiara',
+    brochure: '/brochures/kiara.pdf',
     tagline: '2 & 3 BHK Residences',
     image: '/assets/projects/kiara.webp',
     logo: '/assets/projects/logos/kiara.webp',
@@ -257,6 +267,7 @@ export const projects: Project[] = [
   {
     slug: 'myra',
     name: 'NNK Myra',
+    brochure: '/brochures/myra.pdf',
     tagline: '2.5 BHK Residences',
     image: '/assets/projects/myra.webp',
     logo: '/assets/projects/logos/myra.png',

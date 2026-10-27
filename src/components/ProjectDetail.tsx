@@ -22,7 +22,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <LocationMap address={project.address} name={project.name} />
         {/* <ProjectSpecifications /> hidden for now */}
         <ConstructionUpdates image={project.image} name={project.name} status={project.status} />
-        <ProjectEnquiry projectName={project.name} />
+        <ProjectEnquiry projectName={project.name} slug={project.slug} />
       </div>
       <Footer />
     </>

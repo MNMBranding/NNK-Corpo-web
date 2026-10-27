@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function ProjectEnquiry({ projectName }: { projectName: string }) {
+export default function ProjectEnquiry({ projectName, slug }: { projectName: string; slug: string }) {
   return (
     <section className="bg-surface text-ink py-[72px] md:py-[150px] px-5 md:px-[3%] text-center">
       <div className="max-w-3xl mx-auto w-full">
@@ -8,7 +8,7 @@ export default function ProjectEnquiry({ projectName }: { projectName: string })
           Interested in <span className="text-muted">{projectName}</span>? Let&apos;s talk.
         </h2>
         <Link
-          href="/contact"
+          href={`/contact?project=${slug}`}
           className="group relative overflow-hidden inline-flex items-center justify-center bg-ink text-white rounded-[100px] py-[18px] px-[40px] uppercase font-medium text-[15px] hover:text-white pointer-coarse:text-white max-md:text-white transition-colors duration-300"
         >
           <span className="relative z-10">Enquire Now</span>
