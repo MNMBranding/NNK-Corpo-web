@@ -19,7 +19,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <ProjectSpecs project={project} />
         <FloorPlan floorPlans={project.floorPlans} masterPlan={project.masterPlan} name={project.name} />
         {project.nearbyLocations && <NearbyLocations locations={project.nearbyLocations} />}
-        <LocationMap address={project.address} name={project.name} />
+        <LocationMap address={project.address} coords={project.coords} name={project.name} />
         {/* <ProjectSpecifications /> hidden for now */}
         <ConstructionUpdates image={project.image} name={project.name} status={project.status} />
         <ProjectEnquiry projectName={project.name} slug={project.slug} />

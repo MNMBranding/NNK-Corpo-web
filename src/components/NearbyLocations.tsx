@@ -7,7 +7,7 @@ export default function NearbyLocations({ locations }: { locations: NearbyCatego
         <div className="grid grid-cols-1 md:grid-cols-12 gap-[30px] md:gap-[50px] mb-[60px] md:mb-[80px]">
           <div className="md:col-start-1 md:col-end-4 pt-2">
             <span className="uppercase text-sm tracking-wide opacity-80">
-              Location
+              Connectivity
             </span>
           </div>
           <div className="md:col-start-4 md:col-end-13">
