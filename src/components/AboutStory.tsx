@@ -13,7 +13,7 @@ export default function AboutStory() {
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-10 text-lg md:text-xl leading-relaxed text-body max-w-5xl">
             <p>
-              NNK&apos;s first building, Geethika Towers, was finished in 1995: 15 flats on 700 square yards in Hyderabad. Since then the same group has delivered 36 residential and commercial projects and six open-plot layouts, working under names many Hyderabad buyers already know: Sri Venkateshwara Constructions, Balaji Constructions, Sri Gayatri, Veekay Infra and Vasundhara Developers.
+              NNK’s journey began in 1995 with Geethika Towers, its first building in Hyderabad, comprising 15 flats spread across 700 square yards. Since then, the group has delivered 36 residential and commercial projects and six open-plot layouts, building a presence through names familiar to Hyderabad’s property buyers, including Sri Venkateshwara Constructions, Balaji Constructions, Sri Gayatri, Veekay Infra and Vasundhara Developers.
             </p>
             <p>
               Most of the recent homes carry the NNK name, and nearly all of them stand within a few streets of each other in Sakkubai Nagar, Shaikpet. Beyond Hyderabad, the group has built in Amaravathi and Vijayawada and laid out plots near Vizag and Bangalore.
