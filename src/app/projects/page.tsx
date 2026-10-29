@@ -9,6 +9,8 @@ function toMenuItems(list: Project[]) {
     link: projectPath(project),
     text: project.name.replace(/^NNK\s+/i, ''),
     image: project.image,
+    rera: project.specs.rera,
+    approval: project.specs.approvalNumber && `${project.specs.approvalAuthority || 'Approval'}: ${project.specs.approvalNumber}`,
   }));
 }
 

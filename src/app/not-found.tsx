@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-main flex items-center justify-center px-[6%]">
       <Image
-        src="/assets/675c3668bf2d6dd9c7580b04_hero.avif"
+        src="/assets/projects/gokula.webp"
         alt=""
         fill
         priority

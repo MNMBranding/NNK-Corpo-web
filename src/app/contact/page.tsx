@@ -2,7 +2,6 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ContactHero from "../../components/ContactHero";
 import ContactForm from "../../components/ContactForm";
-// import FAQSection from "../../components/FAQSection"; // FAQs hidden for now
 
 export default function Contact() {
   return (
@@ -11,7 +10,6 @@ export default function Contact() {
       <Navbar />
       <ContactHero />
       <ContactForm />
-      {/* <FAQSection /> */}
       </div>
       <Footer />
     </>

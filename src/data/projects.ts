@@ -29,7 +29,7 @@ export interface Project {
   status: ProjectStatus;
   specs: ProjectSpecs;
   address: string;
-  // "lat,lng" from NNK Projects Locations.xlsx (2026-10-27); the map pins this instead of the address
+  // "lat,lng" from NNK Projects Locations.xlsx (2026-10-27) or the project's Google Maps pin; the map pins this instead of the address
   coords?: string;
   gallery: string[];
   floorPlans: FloorPlanItem[];
@@ -90,11 +90,12 @@ export const projects: Project[] = [
   {
     slug: 'aira',
     name: 'NNK Aira',
+    brochure: '/brochures/aira.pdf',
     tagline: 'A space that breathes with you',
     image: '/assets/projects/aira-hero.webp',
     logo: '/assets/projects/logos/aira.webp',
     status: 'ongoing',
-    specs: { floors: '2 Cellars + Stilt + 8', bhk: '3 BHK + Home Theatre', builtUp: '2,900 – 3,700 sq ft', plotArea: '4,158 sq yards' },
+    specs: { floors: '2 Cellars + Stilt + 8', bhk: '3 BHK + Home Theatre', builtUp: '2,900 – 3,700 sq ft', plotArea: '4,158 sq yards', rera: 'P02500009507', approvalAuthority: 'GHMC', approvalNumber: '4924/GHMC/KHB/2025-BP' },
     address: 'Shaikpet, near Golconda Fort, Hyderabad',
     coords: '17.4059282,78.3941129',
     gallery: [
@@ -151,20 +152,23 @@ export const projects: Project[] = [
     image: '/assets/projects/vrindhavan.jpeg',
     logo: '/assets/projects/logos/vrindhavan.png',
     status: 'ongoing',
-    specs: { floors: 'Stilt + 4', bhk: '2 & 3 BHK', builtUp: 'Not Disclosed', plotArea: '480 sq yards', approvalAuthority: 'GHMC', approvalNumber: '1324/GHMC/KHB/2025-BP' },
+    specs: { floors: 'Stilt + 4', bhk: '2 & 3 BHK', builtUp: '14100', plotArea: '480 sq yards', rera: 'P02500010892', approvalAuthority: 'GHMC', approvalNumber: '1324/GHMC/KHB/2025-BP' },
     address: 'Plot No 243 & 244P, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
+    coords: '17.4071185,78.3959622',
     gallery: galleryFor('vrindhavan', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/vrindhavan.jpeg' }],
   },
   {
     slug: 'aarna',
     name: 'NNK Aarna',
+    brochure: '/brochures/aarna.pdf',
     tagline: 'Luxurious 2 & 3 BHK Flats for Sale in Hyderabad',
     image: '/assets/projects/aarna.jpg',
     logo: '/assets/projects/logos/aarna.png',
     status: 'completed',
     specs: { floors: 'Cellar + Stilt + 5', bhk: '2 & 3 BHK', builtUp: '41,025 sq ft', plotArea: '2,046 sq yards', rera: 'P02500008386', approvalAuthority: 'GHMC', approvalNumber: '6041/GHMC/KHB/2024-BP' },
     address: 'Sy No 128 & 129, Ibrahimbagh, Next to Neknampur Lake, Narsingi, Hyderabad – 500 075',
+    coords: '17.3820601,78.3706103',
     gallery: galleryFor('aarna', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/aarna.jpeg' }],
     nearbyLocations: aarnaLocations,
@@ -206,7 +210,7 @@ export const projects: Project[] = [
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/vindhya.jpg',
     logo: '/assets/projects/logos/vindhya.svg',
-    status: 'ongoing',
+    status: 'completed',
     specs: { floors: 'Stilt + 5', bhk: '2 & 3 BHK', builtUp: '14,550 sq ft', plotArea: '471.20 sq yards', rera: 'P02500009447', approvalAuthority: 'GHMC', approvalNumber: '4802/GHMC/KHB/2025-BP' },
     address: 'Plot No 243 & 244P, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
     coords: '17.4072989,78.3965777',
@@ -294,26 +298,28 @@ export const projects: Project[] = [
   {
     slug: 'avani',
     name: 'NNK Avani',
+    brochure: '/brochures/avani.pdf',
     tagline: 'Building your Dream space with NNK in Hyderabad',
     image: '/assets/projects/avani.jpg',
     logo: '/assets/projects/logos/avani.png',
     status: 'completed',
     specs: { floors: '5', bhk: '2 & 3 BHK', builtUp: '50,000 sq ft', plotArea: '2,088 sq yards', rera: 'P02500006358', approvalAuthority: 'GHMC', approvalNumber: '5787/GHMC/KHB/2023-BP' },
     address: 'H.No. 8-1-297/SN/224, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
-    coords: '17.4066069,78.39528',
+    coords: '17.4065132,78.3954163',
     gallery: galleryFor('avani', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/avani.jpg' }],
   },
   {
     slug: 'gokula',
     name: 'NNK Gokula',
+    brochure: '/brochures/gokula.pdf',
     tagline: '2 & 3 BHK Residences',
     image: '/assets/projects/gokula.webp',
     logo: '/assets/projects/logos/gokula.webp',
     status: 'completed',
     specs: { floors: '5', bhk: '2 & 3 BHK', builtUp: 'Not Disclosed', plotArea: '533.33 sq yards', rera: 'P02500008163', approvalAuthority: 'GHMC', approvalNumber: '5571/GHMC/KHB/2024-BP' },
     address: 'Plot No 233 & 234, Sakkubai Nagar, Shaikpet, Hyderabad – 500 008',
-    coords: '17.4074991,78.3950496',
+    coords: '17.4075636,78.3951263',
     gallery: galleryFor('gokula', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/gokula.webp', caption: 'Unit 1 — 3 BHK · 1715 sft · East Facing  |  Unit 2 — 2 BHK · 1200 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
@@ -321,6 +327,7 @@ export const projects: Project[] = [
   {
     slug: 'amodha',
     name: 'NNK Amodha',
+    brochure: '/brochures/amodha.pdf',
     tagline: '2 & 3 BHK Residences',
     image: '/assets/projects/amodha.jpg',
     logo: '/assets/projects/logos/amodha.png',
@@ -335,6 +342,7 @@ export const projects: Project[] = [
   {
     slug: 'raaga',
     name: 'NNK Raaga',
+    brochure: '/brochures/raaga.pdf',
     tagline: '2 & 3 BHK Residences',
     image: '/assets/projects/raaga.jpg',
     logo: '/assets/projects/logos/raaga.png',
@@ -349,6 +357,7 @@ export const projects: Project[] = [
   {
     slug: 'bhooma',
     name: 'NNK Bhooma',
+    brochure: '/brochures/bhooma.pdf',
     tagline: '3 BHK Residences',
     image: '/assets/projects/bhooma.jpg',
     logo: '/assets/projects/logos/bhooma.png',

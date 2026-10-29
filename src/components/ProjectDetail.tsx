@@ -5,7 +5,6 @@ import ProjectSpecs from "./ProjectSpecs";
 import FloorPlan from "./FloorPlan";
 import NearbyLocations from "./NearbyLocations";
 import LocationMap from "./LocationMap";
-// import ProjectSpecifications from "./ProjectSpecifications"; // hidden for now
 import ConstructionUpdates from "./ConstructionUpdates";
 import ProjectEnquiry from "./ProjectEnquiry";
 import { Project } from "../data/projects";
@@ -20,7 +19,6 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <FloorPlan floorPlans={project.floorPlans} masterPlan={project.masterPlan} name={project.name} />
         {project.nearbyLocations && <NearbyLocations locations={project.nearbyLocations} />}
         <LocationMap address={project.address} coords={project.coords} name={project.name} />
-        {/* <ProjectSpecifications /> hidden for now */}
         <ConstructionUpdates image={project.image} name={project.name} status={project.status} />
         <ProjectEnquiry projectName={project.name} slug={project.slug} />
       </div>

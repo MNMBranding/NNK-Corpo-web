@@ -1,3 +1,4 @@
+import { ArrowSmallIcon, CalendarIcon, ClockIcon } from './Icons';
 import Image from 'next/image';
 import Link from 'next/link';
 import { newsPosts } from '../data/news';
@@ -42,17 +43,17 @@ export default function LatestNews() {
                 
                 {/* Arrow Icon */}
                 <div className="absolute top-0 right-0 w-12 h-12 bg-surface flex items-center justify-center transition-transform duration-300 z-10">
-                  <Image src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" alt="Arrow" width={20} height={17} className="-rotate-45 invert" />
+                  <ArrowSmallIcon size={20} className="-rotate-45 text-ink" />
                 </div>
               </div>
 
               <div className="flex items-center gap-4 mb-4 uppercase text-xs tracking-wide opacity-80">
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/675c1d31c59bdbc0d9795e87_data-light.svg" alt="Date" width={16} height={16} className="invert" />
+                  <CalendarIcon />
                   <span>{item.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Image src="/assets/675c1d31c59bdbc0d9795e8b_time-light.svg" alt="Time" width={16} height={16} className="invert" />
+                  <ClockIcon />
                   <span>{item.readTime} min read</span>
                 </div>
               </div>

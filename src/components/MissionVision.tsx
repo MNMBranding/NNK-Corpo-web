@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 
 const stats = [
   { value: 20, prefix: '', suffix: ' Lakhs Sq\u00a0Ft.', label: 'Developed' },
-  { value: 7, prefix: '', suffix: ' Lakhs+ Sq\u00a0Ft.', label: 'Ongoing' },
+  { value: 6, prefix: '', suffix: ' Lakhs+ Sq\u00a0Ft.', label: 'Ongoing' },
   { value: 42, prefix: '', suffix: ' Projects', label: 'Completed' },
-  { value: 100, prefix: '', suffix: ' Acres Plotting', label: 'Completed' },
+  { value: 70, prefix: '', suffix: ' Acres Plotting', label: 'Completed' },
   { value: 47, prefix: '', suffix: '+ Acres Plotting', label: 'Ongoing' },
   { value: 2000, prefix: '', suffix: '+', label: 'Happy Customers' },
 ];

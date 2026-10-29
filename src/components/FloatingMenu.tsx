@@ -11,6 +11,9 @@ interface MenuItemData {
   link: string;
   text: string;
   image: string;
+  // Shown small in the row's top-right corner
+  rera?: string;
+  approval?: string;
 }
 
 interface FlowingMenuProps {
@@ -102,6 +105,8 @@ const MenuItem: React.FC<MenuItemProps> = ({
   link,
   text,
   image,
+  rera,
+  approval,
   speed,
   textColor,
   marqueeBgColor,
@@ -213,12 +218,12 @@ const MenuItem: React.FC<MenuItemProps> = ({
 
   return (
     <div
-      className="flex-1 relative overflow-hidden text-center"
+      className="group flex-1 relative overflow-hidden text-center"
       ref={itemRef}
       style={{ borderTop: isFirst ? 'none' : `1px solid ${borderColor}` }}
     >
       <a
-        className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-normal text-[4vh]"
+        className={`flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-normal text-[4vh] ${rera || approval ? 'max-md:pt-7' : ''}`}
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -226,6 +231,16 @@ const MenuItem: React.FC<MenuItemProps> = ({
       >
         {text}
       </a>
+      {/* RERA + approval numbers, top right (client request). Hidden while the hover / mobile strip is showing, so they don't overlap it. */}
+      {(rera || approval) && (
+        <div
+          className={`absolute top-2 right-3 md:top-3 md:right-[3%] z-10 pointer-events-none text-right uppercase text-[10px] md:text-xs tracking-wide leading-snug transition-opacity duration-300 ${active ? 'opacity-0' : 'opacity-70 [@media(hover:hover)]:group-hover:opacity-0'}`}
+          style={{ color: textColor }}
+        >
+          {rera && <p>TS RERA: {rera}</p>}
+          {approval && <p>{approval}</p>}
+        </div>
+      )}
       <div
         className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none translate-y-[101%]"
         ref={marqueeRef}

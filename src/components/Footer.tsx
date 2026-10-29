@@ -14,7 +14,6 @@ export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0);
   const footerRef = useRef<HTMLElement>(null);
 
-  const [isCurtain, setIsCurtain] = useState(false);
 
   useEffect(() => {
     if (!footerRef.current) return;
@@ -83,9 +82,14 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 max-md:order-last flex flex-col gap-8">
             <div className="flex flex-col gap-3">
               <h3 className="uppercase text-[13px] tracking-widest text-ink font-semibold">Reach Us</h3>
-              <p className="text-base leading-relaxed max-w-[280px]">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=NNK+Constructions+Sakkubai+Nagar+Shaikpet+Hyderabad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base leading-relaxed max-w-[280px] hover:text-muted transition-colors w-fit"
+              >
                 H.No. 8-1-297/SN/224, Sakkubai Nagar, Shaikpet, Hyderabad - 500008
-              </p>
+              </a>
               <a href="tel:+919092290933" className="text-base hover:text-muted transition-colors w-fit">
                 Mobile: +91 90922 90933
               </a>

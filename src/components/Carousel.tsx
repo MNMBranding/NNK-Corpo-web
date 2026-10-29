@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowLeftIcon, ArrowRightIcon } from './Icons';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
@@ -53,14 +54,14 @@ export default function Carousel({
               aria-label="Previous"
               className="w-[60px] h-[60px] bg-surface-2 hover:bg-[#e4e4e7] pointer-coarse:bg-[#e4e4e7] max-md:bg-[#e4e4e7] flex items-center justify-center transition-colors"
             >
-              <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} className="invert" />
+              <ArrowLeftIcon className="text-ink" />
             </button>
             <button
               onClick={() => scrollByOneSlide(1)}
               aria-label="Next"
               className="w-[60px] h-[60px] bg-surface-2 hover:bg-[#e4e4e7] pointer-coarse:bg-[#e4e4e7] max-md:bg-[#e4e4e7] flex items-center justify-center transition-colors"
             >
-              <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} className="invert" />
+              <ArrowRightIcon className="text-ink" />
             </button>
           </div>
         )}
@@ -167,7 +168,7 @@ export function Lightbox({
             aria-label="Previous"
             className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
           >
-            <Image src="/assets/67601b81e9864eae0d43a2d7_icons8-arrow-left.svg" alt="Prev" width={24} height={24} />
+            <ArrowLeftIcon className="text-white" />
           </button>
           <button
             onClick={(e) => {
@@ -177,7 +178,7 @@ export function Lightbox({
             aria-label="Next"
             className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#1a1a1a] hover:bg-[#2a2a2a] pointer-coarse:bg-[#2a2a2a] max-md:bg-[#2a2a2a] flex items-center justify-center transition-colors z-10"
           >
-            <Image src="/assets/67601b826b691d5a30fb50ed_icons8-arrow-right.svg" alt="Next" width={24} height={24} />
+            <ArrowRightIcon className="text-white" />
           </button>
         </>
       )}

@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { projects } from '../data/projects';
 
 // YouTube videos from the NNK channel (youtube.com/@nnk.constructions). Add more entries to show more videos.
+// `slug` is the project the video is about; its RERA + GHMC numbers are shown on the video.
 const videos = [
-  { id: 'kM-s3Biuu8o', title: 'AIRA Bespoke Living Luxury Architectural Walkthrough by NNK' },
+  { id: 'kM-s3Biuu8o', slug: 'aira', title: 'AIRA Bespoke Living Luxury Architectural Walkthrough by NNK' },
 ];
 
 export default function ProjectVideos() {
@@ -31,8 +33,9 @@ export default function ProjectVideos() {
 }
 
 // Shows the poster first and only loads the YouTube player once clicked, so the page doesn't pull in YouTube's scripts up front
-function Video({ id, title }: { id: string; title: string }) {
+function Video({ id, slug, title }: { id: string; slug: string; title: string }) {
   const [playing, setPlaying] = useState(false);
+  const specs = projects.find((p) => p.slug === slug)?.specs;
 
   return (
     <div className="relative w-full aspect-video overflow-hidden bg-surface-2">
@@ -70,6 +73,14 @@ function Video({ id, title }: { id: string; title: string }) {
             <path d="M45 24 27 14v20z" fill="#fff" />
           </svg>
         </button>
+      )}
+
+      {/* RERA + approval numbers, top right. Clicks pass through to the video; while playing it sits below YouTube's top bar so its icons stay visible. */}
+      {(specs?.rera || specs?.approvalNumber) && (
+        <div className={`absolute right-3 md:right-5 ${playing ? 'top-14 md:top-20' : 'top-3 md:top-5'} z-10 pointer-events-none text-right text-white uppercase text-[10px] md:text-sm tracking-wide leading-relaxed bg-black/45 backdrop-blur-sm rounded px-3 py-2`}>
+          {specs.rera && <p>TS RERA: {specs.rera}</p>}
+          {specs.approvalNumber && <p>{specs.approvalAuthority || 'Approval'}: {specs.approvalNumber}</p>}
+        </div>
       )}
     </div>
   );

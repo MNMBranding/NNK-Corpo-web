@@ -2,35 +2,49 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import BorderButton from './BorderButton';
 import { projects } from '../data/projects';
 
 // Banner slides: same layout, one project each. Location is the short area name.
 const slides = [
   { slug: 'aira', location: 'Shaikpet' },
-  { slug: 'aarna', location: 'Narsingi' },
-  { slug: 'varnam', location: 'Shaikpet' },
+  { slug: 'vrindhavan', location: 'Shaikpet' },
   { slug: 'vyoma', location: 'Shaikpet' },
 ].map((slide) => ({ ...slide, project: projects.find((p) => p.slug === slide.slug)! }));
 
 // How long each banner stays before moving to the next one.
 const SLIDE_DURATION = '6s';
 
+// Position of a slide relative to the active one: -1 = left of it, 0 = showing, 1+ = to the right
+function slideOffset(index: number, active: number) {
+  const offset = (index - active + slides.length) % slides.length;
+  return offset === slides.length - 1 ? -1 : offset;
+}
+
 export default function Hero() {
+  const router = useRouter();
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  // The slide that was showing before the last change, used to decide which slides animate
+  const [previous, setPrevious] = useState(0);
 
   // Banner drag: dragX is how far the pointer has moved since pressing (null = not dragging)
   const [dragX, setDragX] = useState<number | null>(null);
   const dragStartX = useRef(0);
 
-  const goTo = (index: number) => setActive((index + slides.length) % slides.length);
+  const goTo = (index: number) => {
+    setPrevious(active);
+    setActive((index + slides.length) % slides.length);
+  };
 
   const onDragStart = (e: React.PointerEvent<HTMLDivElement>) => {
     // Let the slide-timer buttons handle their own clicks
     if ((e.target as HTMLElement).closest('button')) return;
     e.currentTarget.setPointerCapture(e.pointerId);
     dragStartX.current = e.clientX;
+    // A drag starts from where the slides are now, so a short drag snaps back smoothly
+    setPrevious(active);
     setDragX(0);
   };
 
@@ -45,6 +59,8 @@ export default function Hero() {
     const threshold = e.currentTarget.offsetWidth * 0.15;
     if (dragX < -threshold) goTo(active + 1);
     if (dragX > threshold) goTo(active - 1);
+    // A click (barely moved) opens the project, same as "More Details"
+    if (Math.abs(dragX) < 6) router.push(`/projects/${slides[active].slug}`);
     setDragX(null);
   };
 
@@ -124,11 +140,10 @@ export default function Hero() {
               className={`relative aspect-[4/3] lg:aspect-auto lg:min-h-[min(46vw,800px)] overflow-hidden bg-surface-2 touch-pan-y select-none ${dragX !== null ? 'cursor-grabbing' : 'cursor-grab'}`}
             >
               {slides.map((slide, i) => {
-                // Position relative to the active slide: -1 = left of it, 0 = showing, 1+ = to the right
-                let offset = (i - active + slides.length) % slides.length;
-                if (offset === slides.length - 1) offset = -1;
-                // Only animate slides moving next to the visible area, so the loop wrap is never seen
-                const animate = dragX === null && offset <= 1;
+                const offset = slideOffset(i, active);
+                // Only animate a slide moving one step. A slide wrapping from one side to the other
+                // (e.g. left → right with 3 slides) jumps while hidden instead of sliding across the banner.
+                const animate = dragX === null && Math.abs(offset - slideOffset(i, previous)) <= 1;
 
                 return (
                   <div
@@ -155,7 +170,7 @@ export default function Hero() {
                 {slides.map((slide, i) => (
                   <button
                     key={slide.slug}
-                    onClick={() => setActive(i)}
+                    onClick={() => goTo(i)}
                     aria-label={`Show ${slide.project.name}`}
                     className="group/dot p-[6px]"
                   >
@@ -201,6 +216,14 @@ export default function Hero() {
                     <Stat value={slide.location} label="Location" />
                   </dl>
 
+                  {/* RERA + approval numbers */}
+                  <div className="mt-7 lg:mt-0 lg:mb-[min(3vw,48px)] text-[12px] lg:text-[length:clamp(11px,0.8vw,14px)] uppercase tracking-wide leading-relaxed text-white/65">
+                    {slide.project.specs.rera && <p>TS RERA: {slide.project.specs.rera}</p>}
+                    {slide.project.specs.approvalNumber && (
+                      <p>{slide.project.specs.approvalAuthority || 'Approval'}: {slide.project.specs.approvalNumber}</p>
+                    )}
+                  </div>
+
                   <div className="mt-7 lg:mt-0">
                     <BorderButton href={`/projects/${slide.slug}`} text="More Details" />
                   </div>
@@ -244,17 +267,6 @@ function Stat({ value, label }: { value: string; label: string }) {
     <div className="flex flex-col-reverse justify-end">
       <dt className="text-[14px] lg:text-[length:clamp(14px,1vw,17px)] text-white/65 mt-1">{label}</dt>
       <dd className="font-display font-semibold text-[17px] lg:text-[length:clamp(17px,1.45vw,26px)] leading-tight">{value}</dd>
-    </div>
-  );
-}
-
-function PlayButton() {
-  return (
-    <div className="relative flex items-center justify-center w-[10vw] h-[10vw] rounded-sm overflow-hidden shrink-0">
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-40 brightness-50"
-        style={{ backgroundImage: `url('/assets/675c3668bf2d6dd9c7580b04_hero.avif')` }}
-      />
     </div>
   );
 }

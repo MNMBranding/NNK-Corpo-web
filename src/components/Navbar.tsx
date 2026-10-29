@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowSmallIcon } from './Icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -66,25 +67,11 @@ function NavLink({ href, text, count }: { href: string; text: string; count?: nu
   return (
     <Link href={href} className="group flex items-center gap-1 text-ink overflow-hidden relative w-fit">
       <div className="w-4 h-4 flex items-center justify-center -ml-5 group-hover:ml-0 transition-all duration-300">
-        <Image 
-          src="/assets/675c46b4c27c49c12277a1e5_arrow-small-left.svg" 
-          alt="arrow" 
-          width={12} 
-          height={10} 
-          className="invert"
-        />
+        <ArrowSmallIcon size={12} />
       </div>
       <span className="uppercase text-[16px] font-medium tracking-wide whitespace-nowrap">
         {text} {count !== undefined && <span className="opacity-70 ml-1">{count}</span>}
       </span>
-    </Link>
-  );
-}
-
-function SocialLink({ href, text }: { href: string; text: string }) {
-  return (
-    <Link href={href} className="text-ink text-[13px] font-medium tracking-wide hover:opacity-70 transition-opacity">
-      {text}
     </Link>
   );
 }
