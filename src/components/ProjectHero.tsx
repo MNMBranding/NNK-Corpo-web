@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Project } from '../data/projects';
+import { Project, reraLabel } from '../data/projects';
 
 export default function ProjectHero({ project }: { project: Project }) {
   const { rera, approvalAuthority, approvalNumber } = project.specs;
@@ -21,7 +21,7 @@ export default function ProjectHero({ project }: { project: Project }) {
       {/* RERA + approval numbers, top right (client request) */}
       {(rera || approvalNumber) && (
         <div className="absolute top-3 right-3 md:top-[3%] md:right-[3%] z-10 text-right text-white uppercase text-[11px] md:text-sm tracking-wide leading-relaxed bg-black/45 md:bg-black/30 backdrop-blur-sm rounded px-3 py-2">
-          {rera && <p>TS RERA: {rera}</p>}
+          {rera && <p>{reraLabel(project.slug)}: {rera}</p>}
           {approvalNumber && <p>{approvalAuthority || 'Approval'}: {approvalNumber}</p>}
         </div>
       )}

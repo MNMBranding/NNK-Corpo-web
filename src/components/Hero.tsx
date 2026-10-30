@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import BorderButton from './BorderButton';
-import { projects } from '../data/projects';
+import { projects, reraLabel } from '../data/projects';
 
 // Banner slides: same layout, one project each. Location is the short area name.
 const slides = [
@@ -218,7 +218,7 @@ export default function Hero() {
 
                   {/* RERA + approval numbers */}
                   <div className="mt-7 lg:mt-0 lg:mb-[min(3vw,48px)] text-[12px] lg:text-[length:clamp(11px,0.8vw,14px)] uppercase tracking-wide leading-relaxed text-white/65">
-                    {slide.project.specs.rera && <p>TS RERA: {slide.project.specs.rera}</p>}
+                    {slide.project.specs.rera && <p>{reraLabel(slide.project.slug)}: {slide.project.specs.rera}</p>}
                     {slide.project.specs.approvalNumber && (
                       <p>{slide.project.specs.approvalAuthority || 'Approval'}: {slide.project.specs.approvalNumber}</p>
                     )}

@@ -371,6 +371,13 @@ export const projects: Project[] = [
   },
 ];
 
+// Client: the older projects keep the "TS RERA" name; every other project is "TG RERA"
+const tsReraProjects = ['bhooma', 'raaga', 'amodha', 'gokula'];
+
+export function reraLabel(slug: string): string {
+  return tsReraProjects.includes(slug) ? 'TS RERA' : 'TG RERA';
+}
+
 export function getProjectsByStatus(status: ProjectStatus): Project[] {
   return projects.filter((project) => project.status === status);
 }

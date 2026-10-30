@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Project } from '../data/projects';
+import { Project, reraLabel } from '../data/projects';
 
 export default function ProjectSpecs({ project }: { project: Project }) {
   const specs = [
@@ -30,9 +30,12 @@ export default function ProjectSpecs({ project }: { project: Project }) {
             wide: true,
             content: (
               <>
-                <p className="uppercase text-xs tracking-widest opacity-60 mb-4">TS RERA</p>
+                <p className="uppercase text-xs tracking-widest opacity-60 mb-4">{reraLabel(project.slug)}</p>
                 <div className="flex items-center justify-center gap-3">
-                  <Image src="/assets/badges/ts-rera.png" alt="TS RERA" width={34} height={15} className="shrink-0 rounded-sm" />
+                  {/* The logo we have reads "TS RERA", so it only goes on the TS projects */}
+                  {reraLabel(project.slug) === 'TS RERA' && (
+                    <Image src="/assets/badges/ts-rera.png" alt="TS RERA" width={34} height={15} className="shrink-0 rounded-sm" />
+                  )}
                   <h3 className="text-base sm:text-lg md:text-xl font-medium tracking-tight leading-tight [overflow-wrap:anywhere]">{rera}</h3>
                 </div>
               </>

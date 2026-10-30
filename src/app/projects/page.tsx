@@ -2,14 +2,14 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ProjectsHero from "../../components/ProjectsHero";
 import FlowingMenu from "../../components/FloatingMenu";
-import { getProjectsByStatus, projectPath, Project } from "../../data/projects";
+import { getProjectsByStatus, projectPath, reraLabel, Project } from "../../data/projects";
 
 function toMenuItems(list: Project[]) {
   return list.map((project) => ({
     link: projectPath(project),
     text: project.name.replace(/^NNK\s+/i, ''),
     image: project.image,
-    rera: project.specs.rera,
+    rera: project.specs.rera && `${reraLabel(project.slug)}: ${project.specs.rera}`,
     approval: project.specs.approvalNumber && `${project.specs.approvalAuthority || 'Approval'}: ${project.specs.approvalNumber}`,
   }));
 }

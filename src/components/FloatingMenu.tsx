@@ -237,7 +237,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
           className={`absolute top-2 right-3 md:top-3 md:right-[3%] z-10 pointer-events-none text-right uppercase text-[10px] md:text-xs tracking-wide leading-snug transition-opacity duration-300 ${active ? 'opacity-0' : 'opacity-70 [@media(hover:hover)]:group-hover:opacity-0'}`}
           style={{ color: textColor }}
         >
-          {rera && <p>TS RERA: {rera}</p>}
+          {rera && <p>{rera}</p>}
           {approval && <p>{approval}</p>}
         </div>
       )}
