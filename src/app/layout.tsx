@@ -19,6 +19,16 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "NNK Constructions | Real Estate Developers in Hyderabad",
   description: "NNK Constructions builds premium residential projects across Kokapet, Khajaguda & Shaikpet, Hyderabad. 30+ projects delivered, 2000+ happy families.",
+  // og:image / twitter:image come from app/opengraph-image.png and app/twitter-image.png
+  openGraph: {
+    title: "NNK Constructions | Real Estate Developers in Hyderabad",
+    description: "NNK Constructions builds premium residential projects across Kokapet, Khajaguda & Shaikpet, Hyderabad. 30+ projects delivered, 2000+ happy families.",
+    siteName: "NNK Constructions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
