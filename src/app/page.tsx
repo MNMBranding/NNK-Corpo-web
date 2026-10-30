@@ -6,6 +6,7 @@ import LogoGrid from "../components/LogoGrid";
 import QuoteCTA from "../components/QuoteCTA";
 import HeroSecond from "../components/HeroSecond";
 import LatestNews from "../components/LatestNews";
+import { blogsEnabled } from "../data/news";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
         <LogoGrid />
         <QuoteCTA />
         <HeroSecond />
-        <LatestNews />
+        {blogsEnabled && <LatestNews />}
       </main>
       <Footer />
     </>

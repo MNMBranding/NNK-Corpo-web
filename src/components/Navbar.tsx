@@ -4,6 +4,7 @@ import { ArrowSmallIcon } from './Icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { blogsEnabled } from '../data/news';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ export default function Navbar() {
           <NavLink href="/about" text="About" />
           <NavLink href="/projects" text="Projects" />
           <NavLink href="/contact" text="Contact"/>
-          <NavLink href="/blogs" text="Blogs" />
+          {blogsEnabled && <NavLink href="/blogs" text="Blogs" />}
         </div>
       </div>
 
@@ -48,7 +49,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
           <Link href="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
-          <Link href="/blogs" onClick={() => setIsOpen(false)}>Blogs</Link>
+          {blogsEnabled && <Link href="/blogs" onClick={() => setIsOpen(false)}>Blogs</Link>}
           <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
         </div>
 

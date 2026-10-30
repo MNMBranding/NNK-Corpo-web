@@ -9,6 +9,7 @@ import facebookAnimation from '@/lottie/facebook.json';
 import instagramAnimation from '@/lottie/instagram.json';
 import youtubeAnimation from '@/lottie/youtube.json';
 import linkedinAnimation from '@/lottie/linkedin.json';
+import { blogsEnabled } from '../data/news';
 
 export default function Footer() {
   const [footerHeight, setFooterHeight] = useState(0);
@@ -74,7 +75,7 @@ export default function Footer() {
             <FooterLink href="/" text="Home" />
             <FooterLink href="/about" text="About" />
             <FooterLink href="/projects" text="Projects" />
-            <FooterLink href="/blogs" text="Blogs" />
+            {blogsEnabled && <FooterLink href="/blogs" text="Blogs" />}
             <FooterLink href="/contact" text="Contact" />
           </div>
 

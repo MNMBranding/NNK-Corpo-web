@@ -1,3 +1,6 @@
+// Blogs are hidden for now (client request). Set to true to bring back the Blogs page, posts, nav/footer links and the home "Latest News" section.
+export const blogsEnabled = false;
+
 export interface NewsContentBlock {
   type: 'p' | 'h2';
   text: string;
