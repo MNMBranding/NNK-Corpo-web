@@ -24,8 +24,8 @@ export default function HeroSecond() {
       const progress = (viewportHeight / 2 - (rect.top + rect.height / 2)) / travel;
       const clamped = Math.max(-1, Math.min(1, progress));
 
-      // The image is 180% tall with 40% overhang on each side, so stay inside that
-      const offset = clamped * rect.height * 0.38;
+      // The image is 130% tall with 15% overhang on each side, so stay inside that
+      const offset = clamped * rect.height * 0.14;
       imageRef.current.style.transform = `translate3d(0, ${offset}px, 0)`;
     };
 
@@ -54,7 +54,7 @@ export default function HeroSecond() {
       >
         <div 
           ref={imageRef}
-          className="w-full h-[180%] absolute top-[-40%] left-0 will-change-transform"
+          className="w-full h-[130%] absolute top-[-15%] left-0 will-change-transform"
         >
           <Image 
             src="/assets/living-room-render.jpg"
