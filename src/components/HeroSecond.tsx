@@ -57,7 +57,7 @@ export default function HeroSecond() {
           className="w-full h-[130%] absolute top-[-15%] left-0 will-change-transform"
         >
           <Image 
-            src="/assets/living-room-render.jpg"
+            src="/assets/lounge-render.webp"
             alt="Hero Background"
             fill
             priority
