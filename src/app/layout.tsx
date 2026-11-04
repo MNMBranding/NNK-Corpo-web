@@ -17,6 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nnk-corp.netlify.app"),
   title: "NNK Constructions | Real Estate Developers in Hyderabad",
   description: "NNK Constructions builds premium residential projects across Kokapet, Khajaguda & Shaikpet, Hyderabad. 30+ projects delivered, 2000+ happy families.",
   // og:image / twitter:image come from app/opengraph-image.png and app/twitter-image.png
