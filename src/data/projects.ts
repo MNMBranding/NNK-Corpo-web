@@ -149,7 +149,7 @@ export const projects: Project[] = [
     name: 'NNK Vrindhavan',
     brochure: '/brochures/vrindhavan.pdf',
     tagline: '2 & 3 BHK Residences',
-    image: '/assets/projects/vrindhavan.jpeg',
+    image: '/assets/projects/vrindhavan.webp',
     logo: '/assets/projects/logos/vrindhavan.png',
     status: 'ongoing',
     specs: { floors: 'Stilt + 4', bhk: '2 & 3 BHK', builtUp: '14100', plotArea: '480 sq yards', rera: 'P02500010892', approvalAuthority: 'GHMC', approvalNumber: '1324/GHMC/KHB/2025-BP' },
