@@ -57,7 +57,7 @@ export default function HeroSecond() {
           className="w-full h-[180%] absolute top-[-40%] left-0 will-change-transform"
         >
           <Image 
-            src="/assets/6760393d72ab33d59002b3e4_hero-2.avif"
+            src="/assets/living-room-render.jpg"
             alt="Hero Background"
             fill
             priority
