@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nnk-corp.netlify.app";
-const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-TG843JXB";
 const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION || "DUMMY_GSC_VERIFICATION_CODE_REPLACE_LATER";
 
 export const metadata: Metadata = {
@@ -85,24 +85,22 @@ export default function RootLayout({
       className={`${instrumentSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <head>
-        {/* Google Analytics 4 (GA4) */}
-        {gaId && (
+        {/* Google Tag Manager (GTM) */}
+        {gtmId && (
           <>
             <Script
+              id="gtm-loader"
               strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}
             />
             <Script
-              id="google-analytics"
+              id="gtm-init"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${gaId}', {
-                    page_path: window.location.pathname,
-                  });
                 `,
               }}
             />
@@ -110,6 +108,17 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-full flex flex-col font-sans relative">
+        {/* Google Tag Manager (noscript) */}
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
         {children}
         <CustomCursor />
       </body>
