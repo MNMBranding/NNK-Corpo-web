@@ -30,6 +30,7 @@ export default function ContactForm() {
   const router = useRouter();
   // idle -> sending (spinner) -> sent (check mark) -> leaving (curtain covers the screen) -> /thank-you
   const [phase, setPhase] = useState<'idle' | 'sending' | 'sent' | 'leaving'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     router.prefetch('/thank-you');
@@ -38,17 +39,46 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (phase !== 'idle') return;
+
+    setErrorMessage(null);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+    const interest = (formData.get('interest') as string) || '';
+    const message = (formData.get('message') as string) || '';
+
     // The thank-you page offers the brochure of the project picked in "Interested In"
-    const interest = new FormData(e.currentTarget).get('interest');
     const slug = projects.find((p) => p.name === interest)?.slug;
+
     setPhase('sending');
-    // TODO: send the enquiry to the CRM / email endpoint here (replaces this placeholder wait)
-    await new Promise((r) => setTimeout(r, 900));
-    setPhase('sent');
-    await new Promise((r) => setTimeout(r, 650));
-    setPhase('leaving');
-    await new Promise((r) => setTimeout(r, 750));
-    router.push(slug ? `/thank-you?project=${slug}` : '/thank-you');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, interest, message }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.error || 'Failed to submit form. Please try again.');
+      }
+
+      setPhase('sent');
+      await new Promise((r) => setTimeout(r, 650));
+      setPhase('leaving');
+      await new Promise((r) => setTimeout(r, 750));
+      router.push(slug ? `/thank-you?project=${slug}` : '/thank-you');
+    } catch (err: unknown) {
+      console.error('Contact form submission error:', err);
+      const msg = err instanceof Error ? err.message : 'Unable to send enquiry. Please try again.';
+      setErrorMessage(msg);
+      setPhase('idle');
+    }
   }
 
   return (
@@ -70,13 +100,37 @@ export default function ContactForm() {
             
             <form onSubmit={handleSubmit} className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10 md:gap-y-12">
               <Field label="Full Name" htmlFor="contact-name">
-                <input id="contact-name" type="text" autoComplete="name" placeholder="John Doe" required className={inputClass} />
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  placeholder="John Doe"
+                  required
+                  className={inputClass}
+                />
               </Field>
               <Field label="Email" htmlFor="contact-email">
-                <input id="contact-email" type="email" autoComplete="email" placeholder="you@email.com" required className={inputClass} />
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@email.com"
+                  required
+                  className={inputClass}
+                />
               </Field>
               <Field label="Phone" htmlFor="contact-phone">
-                <input id="contact-phone" type="tel" autoComplete="tel" placeholder="+91 98765 43210" required className={inputClass} />
+                <input
+                  id="contact-phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  placeholder="+91 98765 43210"
+                  required
+                  className={inputClass}
+                />
               </Field>
               <Field label="Interested In" htmlFor="contact-interest">
                 {/* Suspense keeps the page static: the empty dropdown shows until the URL is read */}
@@ -84,15 +138,28 @@ export default function ContactForm() {
                   <PreselectedInterest id="contact-interest" className={inputClass} />
                 </Suspense>
               </Field>
-              <Field label="Message" htmlFor="contact-message" className="md:col-span-2">
-                <textarea id="contact-message" rows={3} placeholder="Tell us about your project" required className={`${inputClass} resize-y`} />
+              <Field label="Message (Optional)" htmlFor="contact-message" className="md:col-span-2">
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows={3}
+                  placeholder="Tell us about your project (optional)"
+                  className={`${inputClass} resize-y`}
+                />
               </Field>
+
+              {errorMessage && (
+                <div className="md:col-span-2 text-red-600 text-sm font-medium bg-red-50 p-4 rounded-lg border border-red-200">
+                  {errorMessage}
+                </div>
+              )}
+
               <div className="md:col-span-2 flex justify-end">
                 <button
                   type="submit"
                   disabled={phase !== 'idle'}
                   aria-live="polite"
-                  className="group relative inline-flex items-center gap-3 rounded-full bg-ink text-white h-[56px] px-8 font-medium text-base hover:bg-[#3f3f46] disabled:hover:bg-ink transition-colors duration-300"
+                  className="group relative inline-flex items-center gap-3 rounded-full bg-ink text-white h-[56px] px-8 font-medium text-base hover:bg-[#3f3f46] disabled:hover:bg-ink transition-colors duration-300 disabled:opacity-80"
                 >
                   <span className={`transition-opacity duration-300 ${phase === 'idle' ? 'opacity-100' : 'opacity-0'}`}>
                     Get in Touch

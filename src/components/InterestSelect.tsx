@@ -19,7 +19,6 @@ export default function InterestSelect({ id, className, initialProject }: { id: 
   const buttonRef = useRef<HTMLButtonElement>(null);
   const hiddenRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
-  const brochure = projects.find((p) => p.name === value)?.brochure;
 
   // Close when clicking anywhere outside
   useEffect(() => {
@@ -110,17 +109,6 @@ export default function InterestSelect({ id, className, initialProject }: { id: 
           </ul>
         )}
       </div>
-
-      {brochure && (
-        <a
-          href={brochure}
-          download
-          className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-ink underline underline-offset-4 hover:text-muted transition-colors"
-        >
-          Download brochure
-          <span aria-hidden="true">&darr;</span>
-        </a>
-      )}
     </div>
   );
 }
