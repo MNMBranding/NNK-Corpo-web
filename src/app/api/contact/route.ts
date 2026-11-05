@@ -64,6 +64,7 @@ export async function POST(req: Request) {
         });
 
         const toEmail = process.env.CONTACT_RECEIVER_EMAIL || process.env.SMTP_USER;
+        const ccEmail = process.env.CONTACT_CC_EMAIL || process.env.SMTP_CC;
         // From address must match the authenticated SMTP user to pass SPF/DMARC checks
         const fromEmail = process.env.SMTP_FROM || `"NNK Website Enquiries" <${process.env.SMTP_USER}>`;
 
@@ -143,6 +144,7 @@ export async function POST(req: Request) {
         await transporter.sendMail({
           from: fromEmail,
           to: toEmail,
+          ...(ccEmail ? { cc: ccEmail } : {}),
           replyTo: `"${name}" <${email}>`,
           subject,
           text: textContent,
