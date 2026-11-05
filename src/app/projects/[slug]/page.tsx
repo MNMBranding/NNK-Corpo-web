@@ -23,7 +23,7 @@ export async function generateMetadata({
   }
 
   const cleanName = project.name;
-  const projectType = project.specs.type || "Apartments";
+  const projectType = project.specs.type || (project.specs.bhk ? `${project.specs.bhk} Apartments` : "Apartments");
   const locationArea = project.address.split(',')[0] || "Hyderabad";
 
   // Use explicit custom SEO if written on the project in projects.ts; otherwise generate defaults

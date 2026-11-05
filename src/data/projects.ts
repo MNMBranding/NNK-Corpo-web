@@ -5,6 +5,7 @@ export interface ProjectSpecs {
   bhk: string;
   builtUp: string;
   plotArea: string;
+  type?: string;
   rera?: string;
   approvalAuthority?: string;
   approvalNumber?: string;

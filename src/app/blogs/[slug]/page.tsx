@@ -23,9 +23,9 @@ export async function generateMetadata({
   }
 
   // Use explicit custom SEO if defined on the article; otherwise fall back to defaults
-  const title = (post as { seo?: { title?: string } }).seo?.title || `${post.title} | NNK Insights`;
-  const description = (post as { seo?: { description?: string } }).seo?.description || post.excerpt;
-  const keywords = (post as { seo?: { keywords?: string[] } }).seo?.keywords || [
+  const title = post.seo?.title || `${post.title} | NNK Insights`;
+  const description = post.seo?.description || post.excerpt;
+  const keywords = post.seo?.keywords || [
     post.title,
     "NNK Insights",
     "Hyderabad Architecture",

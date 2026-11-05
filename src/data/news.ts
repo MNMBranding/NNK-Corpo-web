@@ -14,6 +14,11 @@ export interface NewsPost {
   title: string;
   excerpt: string;
   content: NewsContentBlock[];
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+  };
 }
 
 export const newsPosts: NewsPost[] = [
