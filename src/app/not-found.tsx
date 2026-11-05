@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -8,38 +7,36 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// Giant "404" filling the screen with the message sitting inside the 0 (desktop).
+// Below 1280px the message sits in the middle and the 404 drops to the bottom.
+// --s is the 404 size on large screens; the message width follows it so it always fits inside the 0.
 export default function NotFound() {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-main flex items-center justify-center px-[6%]">
-      <Image
-        src="/assets/projects/gokula.webp"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
-      <div className="absolute inset-0 bg-black/70" />
+    <main className="min-h-svh xl:h-svh overflow-hidden flex flex-col bg-surface text-ink">
+      <section className="relative flex-1 min-h-0 flex flex-col items-center xl:justify-center px-5 xl:px-[2%] pb-8 xl:pb-0 xl:[--s:min(53vw,calc((100svh-130px)*1.3))]">
+        <div className="my-auto xl:my-0 xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 z-10 max-w-[300px] xl:max-w-[min(240px,calc(var(--s)*0.34))] text-center">
+          <h1 className="text-[26px] xl:text-[length:clamp(22px,2vw,32px)] leading-tight font-medium tracking-tight mb-3">
+            Page Not Found
+          </h1>
+          <p className="text-[15px] leading-normal text-[#52525b] mb-6">
+            The page you&apos;re looking for doesn&apos;t exist, or return to the home page
+          </p>
+          <Link
+            href="/"
+            className="inline-block rounded-full border border-ink px-10 py-2.5 text-sm font-medium hover:bg-ink hover:text-white transition-colors duration-300"
+          >
+            Go to Home Page
+          </Link>
+        </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center max-w-2xl">
-        <span className="text-white text-[15vw] md:text-[length:min(7vw,123px)] leading-none font-semibold tracking-tight">
+        {/* Decorative: the heading above already says the page wasn't found */}
+        <span
+          aria-hidden="true"
+          className="block select-none [translate:-0.03em_0] font-normal leading-[0.8] tracking-[-0.04em] [font-variant-numeric:lining-nums] text-[length:min(54vw,55svh)] xl:text-[length:var(--s)]"
+        >
           404
         </span>
-        <h1 className="text-white text-[9vw] md:text-[length:min(3.6vw,60px)] leading-tight font-medium tracking-tight mt-2 mb-6">
-          Page Not Found
-        </h1>
-        <p className="uppercase text-sm md:text-[15px] tracking-wide text-[#a1a1aa] mb-10">
-          The page you&apos;re looking for doesn&apos;t exist, or return to the home page
-        </p>
-
-        <Link
-          href="/"
-          className="group relative overflow-hidden inline-flex items-center justify-center bg-white text-ink rounded-[100px] py-[16px] px-[32px] uppercase font-medium text-[13px] hover:text-white pointer-coarse:text-white max-md:text-white transition-colors duration-300 w-fit"
-        >
-          <span className="relative z-10">Go to Home Page</span>
-          <div className="absolute inset-0 bg-[#111111] rounded-full translate-y-[103%] group-hover:translate-y-0 pointer-coarse:translate-y-0 max-md:translate-y-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-0" />
-        </Link>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
