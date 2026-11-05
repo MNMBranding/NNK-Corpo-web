@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { pageSchema } from "../../data/site";
 import AboutIntro from "../../components/AboutIntro";
 import AboutStory from "../../components/AboutStory";
 import AboutMilestones from "../../components/AboutMilestones";
@@ -31,6 +33,7 @@ export default function About() {
     <>
       <main className="relative z-10 bg-surface">
         <Navbar />
+        <JsonLd data={pageSchema("AboutPage", "About Us", "/about", String(metadata.description))} />
         <AboutIntro />
         <AboutStory />
         <AboutMilestones />

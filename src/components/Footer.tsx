@@ -121,8 +121,11 @@ export default function Footer() {
         
         {/* Bottom Footer */}
         <div className="flex flex-wrap justify-between items-center gap-4 text-sm text-muted pt-8 border-t border-black/10">
-          <div>
-            Copyright © {new Date().getFullYear()} NNK. All rights reserved.
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span>Copyright © {new Date().getFullYear()} NNK. All rights reserved.</span>
+            <Link href="/privacy-policy" className="hover:text-ink transition-colors">
+              Privacy Policy
+            </Link>
           </div>
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-ink hover:text-muted transition-colors uppercase tracking-widest">
             Back to top ↑

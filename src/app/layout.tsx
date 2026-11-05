@@ -3,6 +3,8 @@ import { Instrument_Sans, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import CustomCursor from "../components/CustomCursor";
+import JsonLd from "../components/JsonLd";
+import { siteUrl, organizationSchema } from "../data/site";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -17,9 +19,9 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nnk-corp.netlify.app";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-TG843JXB";
-const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION || "DUMMY_GSC_VERIFICATION_CODE_REPLACE_LATER";
+// Set NEXT_PUBLIC_GSC_VERIFICATION once Search Console gives the code; no tag is output until then.
+const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,9 +47,7 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  verification: {
-    google: gscVerification,
-  },
+  ...(gscVerification && { verification: { google: gscVerification } }),
   openGraph: {
     title: "NNK Constructions | Real Estate Developers in Hyderabad",
     description: "NNK Constructions builds premium residential projects across Kokapet, Khajaguda & Shaikpet, Hyderabad. 30+ projects delivered, 2000+ happy families.",
@@ -119,6 +119,7 @@ export default function RootLayout({
             />
           </noscript>
         )}
+        <JsonLd data={organizationSchema} />
         {children}
         <CustomCursor />
       </body>

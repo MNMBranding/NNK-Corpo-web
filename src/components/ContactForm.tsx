@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import InterestSelect from './InterestSelect';
 import { projects } from '../data/projects';
@@ -105,7 +106,6 @@ export default function ContactForm() {
                   name="name"
                   type="text"
                   autoComplete="name"
-                  placeholder="John Doe"
                   required
                   className={inputClass}
                 />
@@ -116,7 +116,6 @@ export default function ContactForm() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  placeholder="you@email.com"
                   required
                   className={inputClass}
                 />
@@ -127,7 +126,6 @@ export default function ContactForm() {
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  placeholder="+91 98765 43210"
                   required
                   className={inputClass}
                 />
@@ -154,12 +152,29 @@ export default function ContactForm() {
                 </div>
               )}
 
-              <div className="md:col-span-2 flex justify-end">
+              <div className="md:col-span-2 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-10">
+                {/* Consent: must be ticked before the form can be sent */}
+                <label htmlFor="contact-consent" className="flex items-start gap-3 text-base md:text-[17px] leading-relaxed text-muted max-w-[640px] cursor-pointer">
+                  <input
+                    id="contact-consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    className="mt-[4px] size-5 shrink-0 cursor-pointer accent-ink"
+                  />
+                  <span>
+                    I agree to NNK Constructions contacting me by phone, email, SMS or WhatsApp about my enquiry, and to the{' '}
+                    <Link href="/privacy-policy" className="text-ink underline underline-offset-4 hover:text-muted transition-colors">
+                      Privacy Policy
+                    </Link>
+                    .
+                  </span>
+                </label>
                 <button
                   type="submit"
                   disabled={phase !== 'idle'}
                   aria-live="polite"
-                  className="group relative inline-flex items-center gap-3 rounded-full bg-ink text-white h-[56px] px-8 font-medium text-base hover:bg-[#3f3f46] disabled:hover:bg-ink transition-colors duration-300 disabled:opacity-80"
+                  className="group relative shrink-0 self-end md:self-auto inline-flex items-center gap-3 rounded-full bg-ink text-white h-[56px] px-8 font-medium text-base hover:bg-[#3f3f46] disabled:hover:bg-ink transition-colors duration-300 disabled:opacity-80"
                 >
                   <span className={`transition-opacity duration-300 ${phase === 'idle' ? 'opacity-100' : 'opacity-0'}`}>
                     Get in Touch

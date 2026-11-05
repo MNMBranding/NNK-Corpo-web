@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import JsonLd from "../../components/JsonLd";
+import { pageSchema } from "../../data/site";
 import ContactHero from "../../components/ContactHero";
 import ContactForm from "../../components/ContactForm";
 
@@ -29,6 +31,7 @@ export default function Contact() {
     <>
       <div className="min-h-screen bg-surface text-ink relative z-10">
         <Navbar />
+        <JsonLd data={pageSchema("ContactPage", "Contact Us", "/contact", String(metadata.description))} />
         <ContactHero />
         <ContactForm />
       </div>

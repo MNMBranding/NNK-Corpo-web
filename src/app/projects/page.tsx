@@ -3,7 +3,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ProjectsHero from "../../components/ProjectsHero";
 import FlowingMenu from "../../components/FloatingMenu";
-import { getProjectsByStatus, projectPath, reraLabel, Project } from "../../data/projects";
+import JsonLd from "../../components/JsonLd";
+import { getProjectsByStatus, projectPath, reraLabel, Project, projects } from "../../data/projects";
+import { siteUrl, breadcrumbSchema } from "../../data/site";
 
 export const metadata: Metadata = {
   title: "Residential Projects | Ongoing & Completed Developments",
@@ -27,6 +29,34 @@ export const metadata: Metadata = {
   },
 };
 
+// schema.org data: this page as a collection, listing every project page in order
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${siteUrl}/projects#webpage`,
+      url: `${siteUrl}/projects`,
+      name: "Residential Projects",
+      description: String(metadata.description),
+      inLanguage: "en-IN",
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#organization` },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: projects.length,
+        itemListElement: projects.map((project, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: project.name,
+          url: `${siteUrl}${projectPath(project)}`,
+        })),
+      },
+    },
+    breadcrumbSchema([{ name: "Projects", path: "/projects" }]),
+  ],
+};
+
 function toMenuItems(list: Project[]) {
   return list.map((project) => ({
     link: projectPath(project),
@@ -45,6 +75,7 @@ export default function ProjectsPage() {
     <>
       <div className="min-h-screen bg-surface text-ink relative z-10">
         <Navbar />
+        <JsonLd data={projectsSchema} />
         <ProjectsHero />
 
         <section className="pt-[100px] md:pt-[150px] pb-[60px] md:pb-[80px]">
