@@ -1,8 +1,31 @@
+import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ProjectsHero from "../../components/ProjectsHero";
 import FlowingMenu from "../../components/FloatingMenu";
 import { getProjectsByStatus, projectPath, reraLabel, Project } from "../../data/projects";
+
+export const metadata: Metadata = {
+  title: "Residential Projects | Ongoing & Completed Developments",
+  description: "Explore our portfolio of premium ongoing and completed residential communities in Kokapet, Khajaguda, and Shaikpet, Hyderabad.",
+  keywords: [
+    "NNK Projects",
+    "Flats in Hyderabad",
+    "Apartments in Kokapet",
+    "Khajaguda Projects",
+    "Shaikpet Residential",
+    "Ongoing Projects Hyderabad",
+    "Completed Gated Communities"
+  ],
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Residential Projects | Ongoing & Completed Developments | NNK",
+    description: "Explore our portfolio of premium ongoing and completed residential communities in Kokapet, Khajaguda, and Shaikpet, Hyderabad.",
+    url: "/projects",
+  },
+};
 
 function toMenuItems(list: Project[]) {
   return list.map((project) => ({

@@ -20,6 +20,12 @@ export interface FloorPlanItem {
   caption?: string;
 }
 
+export interface ProjectSEO {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -37,6 +43,8 @@ export interface Project {
   nearbyLocations?: NearbyCategory[];
   // PDF in public/brochures/, e.g. '/brochures/aira.pdf'. Offered on the contact form once set.
   brochure?: string;
+  // Custom SEO options. When specified here, these take precedence over auto-generated values.
+  seo?: ProjectSEO;
 }
 
 // Sourced from nnk.co.in / aira.nnk.co.in (project pages) on 2026-08-11.
@@ -114,6 +122,11 @@ export const projects: Project[] = [
     ],
     floorPlans: [{ image: '/assets/projects/floorplans/aira.webp' }],
     masterPlan: '/assets/projects/floorplans/aira-master-plan.webp',
+    seo: {
+      title: 'NNK Aira | Luxury 3 BHK Flats in Shaikpet, Hyderabad',
+      description: 'Discover NNK Aira at Shaikpet, Hyderabad. Offering ultra-luxury 3 BHK residences with Home Theatre, premium amenities, and RERA approval P02500009507.',
+      keywords: ['NNK Aira', '3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'aravali',
