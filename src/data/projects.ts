@@ -124,8 +124,8 @@ export const projects: Project[] = [
     floorPlans: [{ image: '/assets/projects/floorplans/aira.webp' }],
     masterPlan: '/assets/projects/floorplans/aira-master-plan.webp',
     seo: {
-      title: 'NNK Aira | Luxury 3 BHK Flats in Shaikpet, Hyderabad',
-      description: 'Discover NNK Aira at Shaikpet, Hyderabad. Offering ultra-luxury 3 BHK residences with Home Theatre, premium amenities, and RERA approval P02500009507.',
+      title: 'NNK Aira | Luxury 3 BHK Flats for Sale in Shaikpet, Hyderabad',
+      description: 'NNK Aira: 3 BHK flats with home theatre in Shaikpet, Hyderabad. 2 cellars + stilt + 8 floors on 4,158 sq yards. TG RERA P02500009507. Enquire now.',
       keywords: ['NNK Aira', '3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
     },
   },
@@ -143,6 +143,11 @@ export const projects: Project[] = [
     gallery: galleryFor('aravali', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/aravali.png' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Aravali | 2 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Aravali: completed 2 BHK apartments in Shaikpet, Hyderabad. Stilt + 4 floors, 9,360 sq ft built-up on 348 sq yards. View floor plan and location.',
+      keywords: ['NNK Aravali', '2 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'vyoma',
@@ -157,6 +162,11 @@ export const projects: Project[] = [
     coords: '17.405125,78.3932017',
     gallery: galleryFor('vyoma', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/vyoma.jpg', caption: '3 BHK · 1550 sft · East / North / West Facing' }],
+    seo: {
+      title: 'NNK Vyoma | 3 BHK Flats for Sale in Shaikpet, Hyderabad',
+      description: 'NNK Vyoma: 3 BHK flats for sale in Shaikpet, Hyderabad. Stilt + 5 floors on 895.77 sq yards. TG RERA P02500010632. View plans and enquire today..',
+      keywords: ['NNK Vyoma', '3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'vrindhavan',
@@ -171,6 +181,11 @@ export const projects: Project[] = [
     coords: '17.4071185,78.3959622',
     gallery: galleryFor('vrindhavan', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/vrindhavan.jpeg' }],
+    seo: {
+      title: 'NNK Vrindhavan | 2 & 3 BHK Flats for Sale in Shaikpet',
+      description: 'NNK Vrindhavan: 2 & 3 BHK flats for sale in Shaikpet, Hyderabad. Stilt + 4 floors on 480 sq yards. TG RERA P02500010892. View plans and enquire.',
+      keywords: ['NNK Vrindhavan', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'aarna',
@@ -186,6 +201,11 @@ export const projects: Project[] = [
     gallery: galleryFor('aarna', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/aarna.jpeg' }],
     nearbyLocations: aarnaLocations,
+    seo: {
+      title: 'NNK Aarna | 2 & 3 BHK Apartments in Kokapet, Hyderabad',
+      description: 'NNK Aarna: completed 2 & 3 BHK apartments in Kokapet, Hyderabad. Cellar + stilt + 5 floors, 41,025 sq ft built-up. TG RERA P02500008386.',
+      keywords: ['NNK Aarna', '2 & 3 BHK Kokapet', 'Luxury Apartments Kokapet', 'NNK Constructions Kokapet'],
+    },
   },
   {
     slug: 'varnam',
@@ -201,6 +221,11 @@ export const projects: Project[] = [
     gallery: galleryFor('varnam', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/varnam.png', caption: 'Unit 1 — 3 BHK · 1590 sft · East Facing  |  Unit 2 — 2 BHK · 1260 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo:{
+      title:"NNK Varnam | 2 & 3 BHK Apartments in Shaikpet, Hyderabad",
+      description:"NNK Varnam: completed 2 BHK (1,260 sft) and 3 BHK (1,590 sft) apartments in Shaikpet, Hyderabad. Stilt + 5 floors. TG RERA P02500009104.",
+      keywords:["NNK Varnam","2 & 3 BHK Shaikpet","Luxury Apartments Shaikpet","NNK Constructions Shaikpet"],
+    },
   },
   {
     slug: 'sia',
@@ -216,6 +241,11 @@ export const projects: Project[] = [
     gallery: galleryFor('sia', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/sia.png' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Sia | 2 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Sia: completed 2 BHK apartments in Shaikpet, Hyderabad. Stilt + 5 floors, 10,400 sq ft built-up on 385 sq yards. TG RERA P02500009438.',
+      keywords: ['NNK Sia', '2 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'vindhya',
@@ -231,6 +261,11 @@ export const projects: Project[] = [
     gallery: galleryFor('vindhya', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/vindhya.png' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Vindhya | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Vindhya: completed 2 & 3 BHK apartments in Shaikpet, Hyderabad. Stilt + 5 floors, 14,550 sq ft built-up. TG RERA P02500009447.',
+      keywords: ['NNK Vindhya', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'madhumani-vilas',
@@ -246,6 +281,11 @@ export const projects: Project[] = [
     gallery: galleryFor('madhumani-vilas', 4),
     floorPlans: [{ image: '/assets/projects/floorplans/madhumani-vilas.jpeg' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Madhumani Vilas | 2 & 3 BHK Apartments, Shaikpet',
+      description: 'NNK Madhumani Vilas: completed 2 & 3 BHK apartments in Shaikpet, Hyderabad. Stilt + 5 floors, 17,500 sq ft built-up. TG RERA P02500008626.',
+      keywords: ['NNK Madhumani Vilas', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
 
   // Completed
@@ -263,6 +303,11 @@ export const projects: Project[] = [
     gallery: galleryFor('amaya', 3),
     floorPlans: [{ image: '/assets/projects/floorplans/amaya.webp', caption: 'Unit 1 — 3 BHK · 1600 sft · East Facing  |  Unit 2 — 2.5 BHK · 1310 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Amaya | 2.5 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Amaya: completed 2.5 BHK (1,310 sft) and 3 BHK (1,600 sft) apartments in Shaikpet, Hyderabad. Stilt + 5 floors. TG RERA P02500008627.',
+      keywords: ['NNK Amaya', '2.5 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'kavyam',
@@ -278,6 +323,11 @@ export const projects: Project[] = [
     gallery: galleryFor('kavyam', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/kavyam.jpg', caption: 'Unit 1 — 3 BHK · 1730 sft · East Facing  |  Unit 2 — 2 BHK · 1355 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Kavyam | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Kavyam: completed 2 BHK (1,355 sft) and 3 BHK (1,730 sft) apartments in Shaikpet, Hyderabad. 5 floors. TG RERA P02500008128.',
+      keywords: ['NNK Kavyam', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'kiara',
@@ -293,6 +343,11 @@ export const projects: Project[] = [
     gallery: galleryFor('kiara', 1),
     floorPlans: [{ image: '/assets/projects/floorplans/kiara.webp', caption: 'Unit 2 — 3 BHK · 1740 sft · East Facing  |  Unit 1 — 2 BHK · 1240 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Kiara | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Kiara: completed 2 BHK (1,240 sft) and 3 BHK (1,740 sft) apartments in Shaikpet, Hyderabad. 5 floors. TG RERA P02500008129.',
+      keywords: ['NNK Kiara', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'myra',
@@ -308,6 +363,11 @@ export const projects: Project[] = [
     gallery: galleryFor('myra', 8),
     floorPlans: [{ image: '/assets/projects/floorplans/myra.jpeg', caption: 'Unit 2 — 2.5 BHK · 1440 sft · East Facing  |  Unit 1 — 2.5 BHK · 1410 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Myra | 2.5 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Myra: completed 2.5 BHK apartments (1,410–1,440 sft) in Shaikpet, Hyderabad. 5 floors, 14,250 sq ft built-up. TG RERA P02500008164.',
+      keywords: ['NNK Myra', '2.5 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'avani',
@@ -322,6 +382,11 @@ export const projects: Project[] = [
     coords: '17.4065132,78.3954163',
     gallery: galleryFor('avani', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/avani.jpg' }],
+    seo: {
+      title: 'NNK Avani | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Avani: completed 2 & 3 BHK apartments in Shaikpet, Hyderabad. 5 floors, 50,000 sq ft built-up on 2,088 sq yards. TG RERA P02500006358.',
+      keywords: ['NNK Avani', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'gokula',
@@ -337,6 +402,11 @@ export const projects: Project[] = [
     gallery: galleryFor('gokula', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/gokula.webp', caption: 'Unit 1 — 3 BHK · 1715 sft · East Facing  |  Unit 2 — 2 BHK · 1200 sft · West Facing' }],
     nearbyLocations: shaikpetKokapetCluster,
+    seo: {
+      title: 'NNK Gokula | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Gokula: completed 2 BHK (1,200 sft) and 3 BHK (1,715 sft) apartments in Shaikpet, Hyderabad. 5 floors. TS RERA P02500008163.',
+      keywords: ['NNK Gokula', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'amodha',
@@ -352,6 +422,11 @@ export const projects: Project[] = [
     gallery: galleryFor('amodha', 2),
     floorPlans: [{ image: '/assets/projects/floorplans/amodha.jpg' }],
     nearbyLocations: khajagudaCluster,
+    seo: {
+      title: 'NNK Amodha | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Amodha: completed 2 & 3 BHK apartments in Shaikpet, Hyderabad. 5 floors, 20,550 sq ft built-up on 865 sq yards. TS RERA P02500005825.',
+      keywords: ['NNK Amodha', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'raaga',
@@ -367,6 +442,11 @@ export const projects: Project[] = [
     gallery: [],
     floorPlans: [{ image: '/assets/projects/floorplans/raaga.jpg' }],
     nearbyLocations: khajagudaCluster,
+    seo: {
+      title: 'NNK Raaga | 2 & 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Raaga: completed 2 & 3 BHK apartments in Shaikpet, Hyderabad. 13,250 sq ft built-up on 603 sq yards. TS RERA P02500005280. View floor plan.',
+      keywords: ['NNK Raaga', '2 & 3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
   {
     slug: 'bhooma',
@@ -382,6 +462,11 @@ export const projects: Project[] = [
     gallery: [],
     floorPlans: [{ image: '/assets/projects/floorplans/bhooma.jpg' }],
     nearbyLocations: khajagudaCluster,
+    seo: {
+      title: 'NNK Bhooma | 3 BHK Apartments in Shaikpet, Hyderabad',
+      description: 'NNK Bhooma: completed 3 BHK apartments in Shaikpet, Hyderabad. 5 floors, 10,250 sq ft built-up on 368 sq yards. View floor plan and location.',
+      keywords: ['NNK Bhooma', '3 BHK Shaikpet', 'Luxury Apartments Shaikpet', 'NNK Constructions Shaikpet'],
+    },
   },
 ];
 

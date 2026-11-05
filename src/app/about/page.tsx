@@ -9,8 +9,8 @@ import AboutMilestones from "../../components/AboutMilestones";
 import AboutPortfolio from "../../components/AboutPortfolio";
 
 export const metadata: Metadata = {
-  title: "About Us | Crafting Architectural Excellence",
-  description: "Learn about NNK Constructions' 25+ year journey of shaping Hyderabad's skyline. Discover our values, delivered milestones, and commitment to superior craftsmanship.",
+  title: "About NNK Constructions | Building in Hyderabad Since 1995",
+  description: "Building in Hyderabad since 1995, from Geethika Towers to Lavista's 132 flats. Meet the NNK group behind 36 residential and commercial projects.",
   keywords: [
     "About NNK Constructions",
     "Real Estate Developers Hyderabad",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Us | NNK Constructions - Crafting Architectural Excellence",
-    description: "Learn about NNK Constructions' 25+ year journey of shaping Hyderabad's skyline. Discover our values, delivered milestones, and commitment to superior craftsmanship.",
+    title: "About NNK Constructions | Building in Hyderabad Since 1995",
+    description: "Building in Hyderabad since 1995, from Geethika Towers to Lavista's 132 flats. Meet the NNK group behind 36 residential and commercial projects.",
     url: "/about",
   },
 };

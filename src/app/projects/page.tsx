@@ -8,8 +8,8 @@ import { getProjectsByStatus, projectPath, reraLabel, Project, projects } from "
 import { siteUrl, breadcrumbSchema } from "../../data/site";
 
 export const metadata: Metadata = {
-  title: "Residential Projects | Ongoing & Completed Developments",
-  description: "Explore our portfolio of premium ongoing and completed residential communities in Kokapet, Khajaguda, and Shaikpet, Hyderabad.",
+  title: "Ongoing & Completed Projects in Hyderabad | NNK Constructions",
+  description: "Explore NNK's ongoing and completed homes in Shaikpet, Hyderabad: Aira, Vyoma, Vrindhavan and 15 delivered buildings. View floor plans and RERA details.",
   keywords: [
     "NNK Projects",
     "Flats in Hyderabad",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     canonical: "/projects",
   },
   openGraph: {
-    title: "Residential Projects | Ongoing & Completed Developments | NNK",
-    description: "Explore our portfolio of premium ongoing and completed residential communities in Kokapet, Khajaguda, and Shaikpet, Hyderabad.",
+    title: "Ongoing & Completed Projects in Hyderabad | NNK Constructions",
+    description: "Explore NNK's ongoing and completed homes in Shaikpet, Hyderabad: Aira, Vyoma, Vrindhavan and 15 delivered buildings. View floor plans and RERA details.",
     url: "/projects",
   },
 };

@@ -7,8 +7,8 @@ import ContactHero from "../../components/ContactHero";
 import ContactForm from "../../components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Enquire About Premium Homes in Hyderabad",
-  description: "Get in touch with NNK Constructions. Schedule a site visit, enquire about our residential communities, or request a custom quote.",
+  title: "Contact NNK Constructions | Shaikpet, Hyderabad",
+  description: "Contact NNK Constructions in Sakkubai Nagar, Shaikpet, Hyderabad. Call +91 90922 90933 or email sales@nnk.co.in to enquire about flats for sale.",
   keywords: [
     "Contact NNK Constructions",
     "Real Estate Enquiry Hyderabad",
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact Us | Enquire About Premium Homes | NNK Constructions",
-    description: "Get in touch with NNK Constructions. Schedule a site visit, enquire about our residential communities, or request a custom quote.",
+    title: "Contact NNK Constructions | Shaikpet, Hyderabad",
+    description: "Contact NNK Constructions in Sakkubai Nagar, Shaikpet, Hyderabad. Call +91 90922 90933 or email sales@nnk.co.in to enquire about flats for sale.",
     url: "/contact",
   },
 };

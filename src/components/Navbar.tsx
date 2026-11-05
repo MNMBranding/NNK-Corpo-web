@@ -5,11 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { blogsEnabled } from '../data/news';
+import WhatsAppButton from './WhatsAppButton';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
     <nav className="w-full z-50 relative bg-surface">
       {/* Columns match the hero below: logo over the headline, links over the banner + panel */}
       <div className="max-w-[1760px] mx-auto grid grid-cols-2 lg:grid-cols-[minmax(0,12%)_minmax(0,1fr)] px-5 md:px-[3%] py-[30px] items-center">
@@ -61,6 +63,8 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    <WhatsAppButton />
+    </>
   );
 }
 

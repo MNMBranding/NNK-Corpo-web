@@ -11,8 +11,8 @@ import { blogsEnabled } from "../data/news";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "NNK Constructions | Luxury Residential Projects in Hyderabad",
-  description: "Experience architectural excellence with NNK Constructions. Delivering luxury residences, premium gated communities, and iconic homes across Kokapet, Khajaguda, and Shaikpet.",
+  title: "NNK Constructions | Real Estate Developers in Hyderabad",
+  description: "NNK Constructions builds premium 2 & 3 BHK apartments in Shaikpet, Hyderabad. Building since 1995, with 36 projects delivered. Explore ongoing projects.",
   keywords: [
     "NNK Constructions",
     "Luxury Apartments Hyderabad",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "NNK Constructions | Luxury Residential Projects in Hyderabad",
+    title: "NNK Constructions | Real Estate Developers in Hyderabad",
     description: "Experience architectural excellence with NNK Constructions. Delivering luxury residences, premium gated communities, and iconic homes across Kokapet, Khajaguda, and Shaikpet.",
     url: "/",
   },
