@@ -148,7 +148,7 @@ export default function Hero() {
                 return (
                   <div
                     key={slide.slug}
-                    aria-hidden={offset !== 0}
+                    inert={offset !== 0}
                     style={{ transform: `translateX(calc(${offset * 100}% + ${dragX ?? 0}px))` }}
                     className={`absolute inset-0 ${animate ? 'transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]' : ''}`}
                   >
@@ -156,7 +156,8 @@ export default function Hero() {
                       src={slide.project.image}
                       alt={slide.project.name}
                       fill
-                      priority={i === 0}
+                      preload={i === 0}
+                      fetchPriority={i === 0 ? 'high' : 'auto'}
                       draggable={false}
                       sizes="(min-width: 1024px) 70vw, 100vw"
                       className="object-cover object-center"
@@ -172,7 +173,7 @@ export default function Hero() {
                     key={slide.slug}
                     onClick={() => goTo(i)}
                     aria-label={`Show ${slide.project.name}`}
-                    className="group/dot p-[6px]"
+                    className="group/dot p-2"
                   >
                     <span
                       className={`block w-[9px] rounded-full overflow-hidden transition-[height,background-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${i === active ? 'h-[44px] bg-white/45' : 'h-[9px] bg-white/55 group-hover/dot:bg-white'}`}
@@ -196,7 +197,7 @@ export default function Hero() {
               {slides.map((slide, i) => (
                 <div
                   key={slide.slug}
-                  aria-hidden={i !== active}
+                  inert={i !== active}
                   className={`[grid-area:1/1] flex flex-col p-6 lg:px-6 lg:py-10 lg:justify-center lg:items-center lg:text-center transition-opacity duration-1000 ease-in-out ${i === active ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                 >
                   <div className="relative h-12 w-[150px] lg:h-[min(5vw,84px)] lg:w-full">

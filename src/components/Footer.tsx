@@ -127,7 +127,7 @@ export default function Footer() {
               Privacy Policy
             </Link>
           </div>
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-ink hover:text-muted transition-colors uppercase tracking-widest">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="py-2 mr-[76px] md:mr-[104px] text-ink hover:text-muted transition-colors uppercase tracking-widest">
             Back to top ↑
           </button>
         </div>
